@@ -41,7 +41,7 @@ class Database extends AbstractApi
 
         return \array_map(function ($cluster) {
             return new DatabaseClusterEntity($cluster);
-        }, $clusters->databases);
+        }, $clusters->databases ?? []);
     }
 
     /**
