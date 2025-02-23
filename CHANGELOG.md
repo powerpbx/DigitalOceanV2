@@ -9,6 +9,7 @@ CHANGE LOG
 * Moved various param types to native PHP types
 * Add `floatingIpLimit` to `Account` entity
 * Add support for `custom` and `snapshot` image types
+* Changed the signature of `Firewall::update` to allow partial changes
 
 
 ## 4.9.1 (23/02/2025)
