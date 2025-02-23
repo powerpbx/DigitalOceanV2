@@ -39,7 +39,7 @@ class App extends AbstractApi
 
         return \array_map(function ($app) {
             return new AppEntity($app);
-        }, $apps->apps);
+        }, $apps->apps ?? []);
     }
 
     /**
