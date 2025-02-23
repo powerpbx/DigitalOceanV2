@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## 4.9.1 (23/02/2025)
+
+* Work around null list bugs in the app and database APIs
+
+
 ## 4.9.0 (03/12/2023)
 
 * Add support for `symfony/options-resolver:^7.0`
