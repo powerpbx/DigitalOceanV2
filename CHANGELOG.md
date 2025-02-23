@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## 5.0.0 (UPCOMING)
+## 5.0.0 (23/02/2025)
 
 * Add PHP 8.4 support
 * Drop support for PHP earlier than 8.1
