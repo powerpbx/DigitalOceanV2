@@ -8,6 +8,7 @@ CHANGE LOG
 * Drop support for PHP earlier than 8.1
 * Moved various param types to native PHP types
 * Add `floatingIpLimit` to `Account` entity
+* Add `storageSizeMib` to `DatabaseCluster` entity
 * Add support for `custom` and `snapshot` image types
 * Changed the signature of `Firewall::update` to allow partial changes
 

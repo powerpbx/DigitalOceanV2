@@ -253,12 +253,6 @@ parameters:
 			path: src/HttpClient/Message/ResponseMediator.php
 
 		-
-			message: '#^Property DigitalOceanV2\\HttpClient\\Plugin\\History\:\:\$lastResponse \(Psr\\Http\\Message\\ResponseInterface\|null\) is never assigned null so it can be removed from the property type\.$#'
-			identifier: property.unusedType
-			count: 1
-			path: src/HttpClient/Plugin/History.php
-
-		-
 			message: '#^PHPDoc tag @var with type string is not subtype of native type non\-empty\-string\|false\.$#'
 			identifier: varTag.nativeType
 			count: 1
