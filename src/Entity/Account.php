@@ -23,42 +23,42 @@ final class Account extends AbstractEntity
     /**
      * @var int
      */
-    public $dropletLimit;
+    public int $dropletLimit;
 
     /**
      * @var int
      */
-    public $floatingIpLimit;
+    public int $floatingIpLimit;
 
     /**
      * @var string
      */
-    public $email;
+    public string $email;
 
     /**
      * @var string
      */
-    public $uuid;
+    public string $uuid;
 
     /**
      * @var bool
      */
-    public $emailVerified;
+    public bool $emailVerified;
 
     /**
      * @var string
      */
-    public $status;
+    public string $status;
 
     /**
      * @var string
      */
-    public $statusMessage;
+    public string $statusMessage;
 
     /**
      * @var Team
      */
-    public $team;
+    public Team $team;
 
     /**
      * @param array $parameters

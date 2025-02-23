@@ -22,10 +22,10 @@ final class Team extends AbstractEntity
     /**
      * @var string
      */
-    public $uuid;
+    public string $uuid;
 
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 }

@@ -31,7 +31,7 @@ class DomainRecord extends AbstractApi
      *
      * @return DomainRecordEntity[]
      */
-    public function getAll(string $domainName)
+    public function getAll(string $domainName): array
     {
         $domainRecords = $this->get(\sprintf('domains/%s/records', $domainName));
 
@@ -48,7 +48,7 @@ class DomainRecord extends AbstractApi
      *
      * @return DomainRecordEntity
      */
-    public function getById(string $domainName, int $id)
+    public function getById(string $domainName, int $id): DomainRecordEntity
     {
         $domainRecords = $this->get(\sprintf('domains/%s/records/%d', $domainName, $id));
 
@@ -71,7 +71,7 @@ class DomainRecord extends AbstractApi
      *
      * @return DomainRecordEntity
      */
-    public function create(string $domainName, string $type, string $name, string $data, int $priority = null, int $port = null, int $weight = null, int $flags = null, string $tag = null, int $ttl = null)
+    public function create(string $domainName, string $type, string $name, string $data, ?int $priority = null, ?int $port = null, ?int $weight = null, ?int $flags = null, ?string $tag = null, ?int $ttl = null): DomainRecordEntity
     {
         switch ($type = \strtoupper($type)) {
             case 'A':
@@ -134,7 +134,7 @@ class DomainRecord extends AbstractApi
      *
      * @return DomainRecordEntity
      */
-    public function update(string $domainName, int $recordId, ?string $name = null, ?string $data = null, ?int $priority = null, ?int $port = null, ?int $weight = null, ?int $flags = null, ?string $tag = null, ?int $ttl = null)
+    public function update(string $domainName, int $recordId, ?string $name = null, ?string $data = null, ?int $priority = null, ?int $port = null, ?int $weight = null, ?int $flags = null, ?string $tag = null, ?int $ttl = null): DomainRecordEntity
     {
         $content = [
             'name' => $name,
@@ -163,7 +163,7 @@ class DomainRecord extends AbstractApi
      *
      * @return DomainRecordEntity
      */
-    public function updateData(string $domainName, int $recordId, string $data)
+    public function updateData(string $domainName, int $recordId, string $data): DomainRecordEntity
     {
         return $this->updateFields($domainName, $recordId, ['data' => $data]);
     }
@@ -177,7 +177,7 @@ class DomainRecord extends AbstractApi
      *
      * @return DomainRecordEntity
      */
-    public function updateFields(string $domainName, int $recordId, array $fields)
+    public function updateFields(string $domainName, int $recordId, array $fields): DomainRecordEntity
     {
         $domainRecord = $this->put(\sprintf('domains/%s/records/%d', $domainName, $recordId), $fields);
 

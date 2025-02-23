@@ -33,7 +33,7 @@ class CdnEndpoint extends AbstractApi
      *
      * @return CdnEndpointEntity
      */
-    public function create(string $origin, ?int $ttl = null, ?string $certificateId = null, ?string $customDomain = null)
+    public function create(string $origin, ?int $ttl = null, ?string $certificateId = null, ?string $customDomain = null): CdnEndpointEntity
     {
         $body = ['origin' => $origin];
 
@@ -59,7 +59,7 @@ class CdnEndpoint extends AbstractApi
      *
      * @return CdnEndpointEntity
      */
-    public function getById(string $id)
+    public function getById(string $id): CdnEndpointEntity
     {
         $endpoint = $this->get(\sprintf('cdn/endpoints/%s', $id));
 
@@ -71,7 +71,7 @@ class CdnEndpoint extends AbstractApi
      *
      * @return CdnEndpointEntity[]
      */
-    public function getAll()
+    public function getAll(): array
     {
         $endpoints = $this->get('cdn/endpoints');
 
@@ -91,7 +91,7 @@ class CdnEndpoint extends AbstractApi
      *
      * @return CdnEndpointEntity
      */
-    public function update(string $id, ?int $ttl = null, ?string $certificateId = null, ?string $customDomain = null)
+    public function update(string $id, ?int $ttl = null, ?string $certificateId = null, ?string $customDomain = null): CdnEndpointEntity
     {
         if (null === $ttl && null === $certificateId && null === $customDomain) {
             throw new InvalidArgumentException('Update method requires at least one parameter to be not null');

@@ -22,12 +22,12 @@ final class DatabaseBackup extends AbstractEntity
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @var float
      */
-    public $sizeGigabytes;
+    public float $sizeGigabytes;
 
     /**
      * @param string $createdAt

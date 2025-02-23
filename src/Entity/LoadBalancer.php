@@ -22,72 +22,72 @@ final class LoadBalancer extends AbstractEntity
     /**
      * @var string
      */
-    public $id;
+    public string $id;
 
     /**
      * @var int
      */
-    public $name;
+    public int $name;
 
     /**
      * @var string
      */
-    public $ip;
+    public string $ip;
 
     /**
      * @var string
      */
-    public $algorithm;
+    public string $algorithm;
 
     /**
      * @var string
      */
-    public $status;
+    public string $status;
 
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @var ForwardingRule[]
      */
-    public $forwardingRules;
+    public array $forwardingRules;
 
     /**
      * @var HealthCheck
      */
-    public $healthCheck;
+    public HealthCheck $healthCheck;
 
     /**
      * @var StickySession
      */
-    public $stickySessions;
+    public StickySession $stickySessions;
 
     /**
      * @var Region
      */
-    public $region;
+    public Region $region;
 
     /**
      * @var string
      */
-    public $tag;
+    public string $tag;
 
     /**
      * @var array
      */
-    public $dropletIds;
+    public array $dropletIds;
 
     /**
      * @var bool
      */
-    public $redirectHttpToHttps;
+    public bool $redirectHttpToHttps;
 
     /**
      * @var int<30, 600>
      */
-    public $httpIdleTimeoutSeconds;
+    public int $httpIdleTimeoutSeconds;
 
     /**
      * @param array $parameters

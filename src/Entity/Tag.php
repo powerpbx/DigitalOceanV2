@@ -22,10 +22,10 @@ final class Tag extends AbstractEntity
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      * @var array
      */
-    public $resources;
+    public array $resources;
 }

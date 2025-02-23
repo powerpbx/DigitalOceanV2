@@ -34,7 +34,7 @@ final class Authentication implements Plugin
      *
      * @var string
      */
-    private $header;
+    private string $header;
 
     /**
      * Create a new authentication plugin instance.

@@ -22,42 +22,42 @@ final class Snapshot extends AbstractEntity
     /**
      * @var string
      */
-    public $id;
+    public string $id;
 
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @var string
      */
-    public $resourceId;
+    public string $resourceId;
 
     /**
      * @var string
      */
-    public $resourceType;
+    public string $resourceType;
 
     /**
      * @var int
      */
-    public $minDiskSize;
+    public int $minDiskSize;
 
     /**
      * @var float
      */
-    public $sizeGigabytes;
+    public float $sizeGigabytes;
 
     /**
      * @var string[]
      */
-    public $regions = [];
+    public array $regions = [];
 
     /**
      * @param string $createdAt

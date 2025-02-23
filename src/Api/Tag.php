@@ -27,7 +27,7 @@ class Tag extends AbstractApi
      *
      * @return TagEntity[]
      */
-    public function getAll()
+    public function getAll(): array
     {
         $tags = $this->get('tags');
 
@@ -43,7 +43,7 @@ class Tag extends AbstractApi
      *
      * @return TagEntity
      */
-    public function getByName(string $name)
+    public function getByName(string $name): TagEntity
     {
         $tag = $this->get(\sprintf('tags/%s', $name));
 
@@ -57,7 +57,7 @@ class Tag extends AbstractApi
      *
      * @return TagEntity
      */
-    public function create(string $name)
+    public function create(string $name): TagEntity
     {
         $tag = $this->post('tags', ['name' => $name]);
 

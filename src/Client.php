@@ -69,17 +69,17 @@ class Client
      *
      * @var string
      */
-    private const USER_AGENT = 'digitalocean-php-api-client/4.9';
+    private const USER_AGENT = 'digitalocean-php-api-client/5.0';
 
     /**
      * @var Builder
      */
-    private $httpClientBuilder;
+    private Builder $httpClientBuilder;
 
     /**
      * @var History
      */
-    private $responseHistory;
+    private History $responseHistory;
 
     /**
      * @param Builder|null $httpClientBuilder

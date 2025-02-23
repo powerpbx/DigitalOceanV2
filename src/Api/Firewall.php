@@ -28,7 +28,7 @@ class Firewall extends AbstractApi
      *
      * @return FirewallEntity[]
      */
-    public function getAll()
+    public function getAll(): array
     {
         $firewalls = $this->get('firewalls');
 
@@ -44,7 +44,7 @@ class Firewall extends AbstractApi
      *
      * @return FirewallEntity
      */
-    public function getById(string $id)
+    public function getById(string $id): FirewallEntity
     {
         $firewall = $this->get(\sprintf('firewalls/%s', $id));
 
@@ -60,7 +60,7 @@ class Firewall extends AbstractApi
      *
      * @return FirewallEntity
      */
-    public function create(string $name, array $inboundRules, array $outboundRules, array $dropletIds = [], array $tags = [])
+    public function create(string $name, array $inboundRules, array $outboundRules, array $dropletIds = [], array $tags = []): FirewallEntity
     {
         $data = [
             'name' => $name,
@@ -101,7 +101,7 @@ class Firewall extends AbstractApi
      *
      * @return FirewallEntity
      */
-    public function update(string $id, $firewall)
+    public function update(string $id, FirewallEntity $firewall): FirewallEntity
     {
         $data = $firewall->toArray();
 

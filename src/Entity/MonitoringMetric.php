@@ -23,10 +23,10 @@ final class MonitoringMetric extends AbstractEntity
     /**
      * @var array
      */
-    public $data;
+    public array $data;
 
     /**
      * @var array
      */
-    public $status;
+    public array $status;
 }

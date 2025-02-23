@@ -34,7 +34,7 @@ final class History implements Journal
      *
      * @var \Psr\Http\Message\ResponseInterface|null
      */
-    private $lastResponse;
+    private ?\Psr\Http\Message\ResponseInterface $lastResponse;
 
     /**
      * Get the last response.

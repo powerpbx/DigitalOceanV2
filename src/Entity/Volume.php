@@ -22,52 +22,52 @@ final class Volume extends AbstractEntity
     /**
      * @var string
      */
-    public $id;
+    public string $id;
 
     /**
      * @var Region
      */
-    public $region;
+    public Region $region;
 
     /**
      * @var int[]
      */
-    public $dropletIds = [];
+    public array $dropletIds = [];
 
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      * @var string
      */
-    public $description;
+    public string $description;
 
     /**
      * @var int
      */
-    public $sizeGigabytes;
+    public int $sizeGigabytes;
 
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @var string
      */
-    public $filesystemType;
+    public string $filesystemType;
 
     /**
      * @var string
      */
-    public $filesystemLabel;
+    public string $filesystemLabel;
 
     /**
      * @var Tag[]
      */
-    public $tags = [];
+    public array $tags = [];
 
     /**
      * @param array $parameters

@@ -39,21 +39,21 @@ abstract class AbstractApi
      *
      * @var Client
      */
-    private $client;
+    private Client $client;
 
     /**
      * The per page parameter.
      *
      * @var int|null
      */
-    private $perPage;
+    private ?int $perPage;
 
     /**
      * The page parameter.
      *
      * @var int|null
      */
-    private $page;
+    private ?int $page;
 
     /**
      * Create a new API instance.

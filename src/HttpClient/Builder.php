@@ -40,42 +40,42 @@ final class Builder
      *
      * @var ClientInterface
      */
-    private $httpClient;
+    private ClientInterface $httpClient;
 
     /**
      * The HTTP request factory.
      *
      * @var RequestFactoryInterface
      */
-    private $requestFactory;
+    private RequestFactoryInterface $requestFactory;
 
     /**
      * The HTTP stream factory.
      *
      * @var StreamFactoryInterface
      */
-    private $streamFactory;
+    private StreamFactoryInterface $streamFactory;
 
     /**
      * The URI factory.
      *
      * @var UriFactoryInterface
      */
-    private $uriFactory;
+    private UriFactoryInterface $uriFactory;
 
     /**
      * The currently registered plugins.
      *
      * @var Plugin[]
      */
-    private $plugins = [];
+    private array $plugins = [];
 
     /**
      * A HTTP client with all our plugins.
      *
      * @var HttpMethodsClientInterface|null
      */
-    private $pluginClient;
+    private ?HttpMethodsClientInterface $pluginClient;
 
     /**
      * Create a new http client builder instance.
@@ -88,10 +88,10 @@ final class Builder
      * @return void
      */
     public function __construct(
-        ClientInterface $httpClient = null,
-        RequestFactoryInterface $requestFactory = null,
-        StreamFactoryInterface $streamFactory = null,
-        UriFactoryInterface $uriFactory = null
+        ?ClientInterface $httpClient = null,
+        ?RequestFactoryInterface $requestFactory = null,
+        ?StreamFactoryInterface $streamFactory = null,
+        ?UriFactoryInterface $uriFactory = null
     ) {
         $this->httpClient = $httpClient ?? Psr18ClientDiscovery::find();
         $this->requestFactory = $requestFactory ?? Psr17FactoryDiscovery::findRequestFactory();

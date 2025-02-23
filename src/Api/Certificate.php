@@ -27,7 +27,7 @@ class Certificate extends AbstractApi
      *
      * @return CertificateEntity[]
      */
-    public function getAll()
+    public function getAll(): array
     {
         $certificates = $this->get('certificates');
 
@@ -43,7 +43,7 @@ class Certificate extends AbstractApi
      *
      * @return CertificateEntity
      */
-    public function getById(string $id)
+    public function getById(string $id): CertificateEntity
     {
         $certificate = $this->get(\sprintf('certificates/%s', $id));
 
@@ -60,7 +60,7 @@ class Certificate extends AbstractApi
      *
      * @return CertificateEntity
      */
-    public function create(string $name, string $privateKey, string $leafCertificate, ?string $certificateChain = null)
+    public function create(string $name, string $privateKey, string $leafCertificate, ?string $certificateChain = null): CertificateEntity
     {
         $params = [
             'type' => 'custom',
@@ -86,7 +86,7 @@ class Certificate extends AbstractApi
      *
      * @return CertificateEntity
      */
-    public function createLetsEncrypt(string $name, array $dnsNames)
+    public function createLetsEncrypt(string $name, array $dnsNames): CertificateEntity
     {
         $params = [
             'type' => 'lets_encrypt',

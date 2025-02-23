@@ -22,42 +22,42 @@ final class DatabaseReplica extends AbstractEntity
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      * @var DatabaseConnection
      */
-    public $connection;
+    public DatabaseConnection $connection;
 
     /**
      * @var DatabaseConnection
      */
-    public $privateConnection;
+    public DatabaseConnection $privateConnection;
 
     /**
      * @var string
      */
-    public $region;
+    public string $region;
 
     /**
      * @var string
      */
-    public $status;
+    public string $status;
 
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @var string[]
      */
-    public $tags = [];
+    public array $tags = [];
 
     /**
      * @var string
      */
-    public $privateNetworkUuid;
+    public string $privateNetworkUuid;
 
     /**
      * @param array $parameters

@@ -35,7 +35,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseClusterEntity[]
      */
-    public function getAllClusters(?string $tag = null)
+    public function getAllClusters(?string $tag = null): array
     {
         $clusters = $this->get('databases', null === $tag ? [] : ['tag_name' => $tag]);
 
@@ -51,7 +51,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseClusterEntity
      */
-    public function getClusterById(string $id)
+    public function getClusterById(string $id): DatabaseClusterEntity
     {
         $cluster = $this->get(\sprintf('databases/%s', $id));
 
@@ -72,7 +72,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseClusterEntity
      */
-    public function createCluster(string $name, string $engine, string $size, string $region, int $numNodes, string $version = null, array $tags = [], string $privateNetworkUuid = null)
+    public function createCluster(string $name, string $engine, string $size, string $region, int $numNodes, ?string $version = null, array $tags = [], ?string $privateNetworkUuid = null): DatabaseClusterEntity
     {
         $cluster = $this->post('databases', [
             'name' => $name,
@@ -139,7 +139,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseRuleEntity[]
      */
-    public function getFirewallRules(string $clusterId)
+    public function getFirewallRules(string $clusterId): array
     {
         $rules = $this->get(\sprintf('databases/%s/firewall', $clusterId));
 
@@ -187,7 +187,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseBackupEntity[]
      */
-    public function getBackups(string $clusterId)
+    public function getBackups(string $clusterId): array
     {
         $backups = $this->get(\sprintf('databases/%s/backups', $clusterId));
 
@@ -211,7 +211,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseClusterEntity
      */
-    public function createClusterFromBackup(string $name, array $backupRestore, string $engine, string $size, string $region, int $numNodes, string $version = null, array $tags = [], string $privateNetworkUuid = null)
+    public function createClusterFromBackup(string $name, array $backupRestore, string $engine, string $size, string $region, int $numNodes, ?string $version = null, array $tags = [], ?string $privateNetworkUuid = null): DatabaseClusterEntity
     {
         $database = $this->post('databases', [
             'name' => $name,
@@ -235,7 +235,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseReplicaEntity[]
      */
-    public function getAllReplicas(string $clusterId)
+    public function getAllReplicas(string $clusterId): array
     {
         $replicas = $this->get(\sprintf('databases/%s/replicas', $clusterId));
 
@@ -252,7 +252,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseReplicaEntity
      */
-    public function getReplicaByName(string $clusterId, string $name)
+    public function getReplicaByName(string $clusterId, string $name): DatabaseReplicaEntity
     {
         $replica = $this->get(\sprintf('databases/%s/replicas/%s', $clusterId, $name));
 
@@ -271,7 +271,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseReplicaEntity
      */
-    public function createReplica(string $clusterId, string $name, string $size, string $region = null, array $tags = [], string $privateNetworkUuid = null)
+    public function createReplica(string $clusterId, string $name, string $size, ?string $region = null, array $tags = [], ?string $privateNetworkUuid = null): DatabaseReplicaEntity
     {
         $replica = $this->post(\sprintf('databases/%s/replicas', $clusterId), [
             'name' => $name,
@@ -304,7 +304,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseUserEntity[]
      */
-    public function getAllUsers(string $clusterId)
+    public function getAllUsers(string $clusterId): array
     {
         $users = $this->get(\sprintf('databases/%s/users', $clusterId));
 
@@ -321,7 +321,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseUserEntity
      */
-    public function getUserByName(string $clusterId, string $name)
+    public function getUserByName(string $clusterId, string $name): DatabaseUserEntity
     {
         $user = $this->get(\sprintf('databases/%s/users/%s', $clusterId, $name));
 
@@ -337,7 +337,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseUserEntity
      */
-    public function createUser(string $clusterId, string $name, string $authPlugin = null)
+    public function createUser(string $clusterId, string $name, ?string $authPlugin = null): DatabaseUserEntity
     {
         $user = $this->post(\sprintf('databases/%s/users', $clusterId), [
             'name' => $name,
@@ -358,7 +358,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseUserEntity
      */
-    public function updateUserMysqlAuthMethod(string $clusterId, string $username, string $authPlugin)
+    public function updateUserMysqlAuthMethod(string $clusterId, string $username, string $authPlugin): DatabaseUserEntity
     {
         $user = $this->post(\sprintf('databases/%s/users/%s/reset_auth', $clusterId, $username), [
             'mysql_settings' => [
@@ -389,7 +389,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseEntity[]
      */
-    public function getAllDatabases(string $clusterId)
+    public function getAllDatabases(string $clusterId): array
     {
         $databases = $this->get(\sprintf('databases/%s/dbs', $clusterId));
 
@@ -406,7 +406,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseEntity
      */
-    public function getDatabaseByName(string $clusterId, string $name)
+    public function getDatabaseByName(string $clusterId, string $name): DatabaseEntity
     {
         $database = $this->get(\sprintf('databases/%s/dbs/%s', $clusterId, $name));
 
@@ -421,7 +421,7 @@ class Database extends AbstractApi
      *
      * @return DatabaseEntity
      */
-    public function createDatabase(string $clusterId, string $name)
+    public function createDatabase(string $clusterId, string $name): DatabaseEntity
     {
         $database = $this->post(\sprintf('databases/%s/dbs', $clusterId), [
             'name' => $name,
@@ -450,7 +450,7 @@ class Database extends AbstractApi
      *
      * @return DatabasePoolEntity[]
      */
-    public function getAllConnectionPools(string $clusterId)
+    public function getAllConnectionPools(string $clusterId): array
     {
         $pools = $this->get(\sprintf('databases/%s/pools', $clusterId));
 
@@ -467,7 +467,7 @@ class Database extends AbstractApi
      *
      * @return DatabasePoolEntity
      */
-    public function getConnectionPoolByName(string $clusterId, string $name)
+    public function getConnectionPoolByName(string $clusterId, string $name): DatabasePoolEntity
     {
         $pool = $this->get(\sprintf('databases/%s/pools/%s', $clusterId, $name));
 
@@ -486,7 +486,7 @@ class Database extends AbstractApi
      *
      * @return DatabasePoolEntity
      */
-    public function createConnectionPool(string $clusterId, string $name, string $mode, int $size, string $db, string $user)
+    public function createConnectionPool(string $clusterId, string $name, string $mode, int $size, string $db, string $user): DatabasePoolEntity
     {
         $pool = $this->post(\sprintf('databases/%s/pools', $clusterId), [
             'name' => $name,
@@ -519,7 +519,7 @@ class Database extends AbstractApi
      *
      * @return object
      */
-    public function getEvictionPolicy(string $clusterId)
+    public function getEvictionPolicy(string $clusterId): object
     {
         $modes = $this->get(\sprintf('databases/%s/eviction_policy', $clusterId));
 
@@ -534,7 +534,7 @@ class Database extends AbstractApi
      *
      * @return void
      */
-    public function updateEvictionPolicy(string $clusterId, $evictionPolicy): void
+    public function updateEvictionPolicy(string $clusterId, string $evictionPolicy): void
     {
         $this->put(\sprintf('databases/%s/eviction_policy', $clusterId), [
             'eviction_policy' => $evictionPolicy,
@@ -548,7 +548,7 @@ class Database extends AbstractApi
      *
      * @return object
      */
-    public function getSqlMode(string $clusterId)
+    public function getSqlMode(string $clusterId): object
     {
         $mode = $this->get(\sprintf('databases/%s/sql_mode', $clusterId));
 
@@ -563,7 +563,7 @@ class Database extends AbstractApi
      *
      * @return void
      */
-    public function updateSqlModes(string $clusterId, $sqlMode): void
+    public function updateSqlModes(string $clusterId, string $sqlMode): void
     {
         $this->put(\sprintf('databases/%s/sql_mode', $clusterId), [
             'sql_mode' => $sqlMode,

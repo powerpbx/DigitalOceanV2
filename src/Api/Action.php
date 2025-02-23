@@ -28,7 +28,7 @@ class Action extends AbstractApi
      *
      * @return ActionEntity[]
      */
-    public function getAll()
+    public function getAll(): array
     {
         $actions = $this->get('actions');
 
@@ -44,7 +44,7 @@ class Action extends AbstractApi
      *
      * @return ActionEntity
      */
-    public function getById(int $id)
+    public function getById(int $id): ActionEntity
     {
         $action = $this->get(\sprintf('actions/%d', $id));
 

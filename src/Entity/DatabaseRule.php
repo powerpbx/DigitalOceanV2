@@ -22,27 +22,27 @@ final class DatabaseRule extends AbstractEntity
     /**
      * @var string
      */
-    public $uuid;
+    public string $uuid;
 
     /**
      * @var string
      */
-    public $clusterUuid;
+    public string $clusterUuid;
 
     /**
      * @var string
      */
-    public $type;
+    public string $type;
 
     /**
      * @var string
      */
-    public $value;
+    public string $value;
 
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @param string $createdAt

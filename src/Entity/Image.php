@@ -23,72 +23,72 @@ final class Image extends AbstractEntity
     /**
      * @var int
      */
-    public $id;
+    public int $id;
 
     /**
      * @var string
      */
-    public $name;
+    public string $name;
 
     /**
      * @var string
      */
-    public $type;
+    public string $type;
 
     /**
      * @var string
      */
-    public $distribution;
+    public string $distribution;
 
     /**
      * @var string
      */
-    public $slug;
+    public string $slug;
 
     /**
      * @var int
      */
-    public $minDiskSize;
+    public int $minDiskSize;
 
     /**
      * @var float
      */
-    public $sizeGigabytes;
+    public float $sizeGigabytes;
 
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @var bool
      */
-    public $public;
+    public bool $public;
 
     /**
      * @var string[]
      */
-    public $regions = [];
+    public array $regions = [];
 
     /**
      * @var string
      */
-    public $description;
+    public string $description;
 
     /**
      * @var string[]
      */
-    public $tags = [];
+    public array $tags = [];
 
     /**
      * @var string
      */
-    public $status;
+    public string $status;
 
     /**
      * @var string
      */
-    public $error_message;
+    public string $error_message;
 
     /**
      * @param string $createdAt

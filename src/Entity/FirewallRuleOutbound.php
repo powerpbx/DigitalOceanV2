@@ -23,7 +23,7 @@ final class FirewallRuleOutbound extends FirewallRule
     /**
      * @var FirewallLocations
      */
-    public $destinations;
+    public FirewallLocations $destinations;
 
     /**
      * @param array $parameters

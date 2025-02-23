@@ -31,7 +31,7 @@ class LoadBalancer extends AbstractApi
      *
      * @return LoadBalancerEntity[]
      */
-    public function getAll()
+    public function getAll(): array
     {
         $loadBalancers = $this->get('load_balancers');
 
@@ -47,7 +47,7 @@ class LoadBalancer extends AbstractApi
      *
      * @return LoadBalancerEntity
      */
-    public function getById(string $id)
+    public function getById(string $id): LoadBalancerEntity
     {
         $loadBalancer = $this->get(\sprintf('load_balancers/%s', $id));
 
@@ -72,14 +72,14 @@ class LoadBalancer extends AbstractApi
     public function create(
         string $name,
         string $region,
-        array $forwardRules = null,
+        ?array $forwardRules = null,
         string $algorithm = 'round_robin',
         array $healthCheck = [],
         array $stickySessions = [],
         array $dropletIds = [],
         bool $httpsRedirect = false,
         int $httpIdleTimeoutSeconds = 60
-    ) {
+    ): LoadBalancerEntity {
         $loadBalancer = $this->post('load_balancers', [
             'name' => $name,
             'algorithm' => $algorithm,
@@ -103,7 +103,7 @@ class LoadBalancer extends AbstractApi
      *
      * @return LoadBalancerEntity
      */
-    public function update(string $id, $loadBalancerSpec)
+    public function update(string $id, array|LoadBalancerEntity $loadBalancerSpec): LoadBalancerEntity
     {
         $data = self::formatConfigurationOptions($loadBalancerSpec);
 
@@ -129,7 +129,7 @@ class LoadBalancer extends AbstractApi
      *
      * @return array
      */
-    private static function formatForwardRules($forwardRules)
+    private static function formatForwardRules(array|AbstractEntity $forwardRules): array
     {
         if (\is_array($forwardRules)) {
             return \array_map(function ($rule) {
@@ -148,7 +148,7 @@ class LoadBalancer extends AbstractApi
      *
      * @return array
      */
-    private static function formatConfigurationOptions($config)
+    private static function formatConfigurationOptions(array|AbstractEntity $config): array
     {
         return $config instanceof AbstractEntity ? $config->toArray() : $config;
     }

@@ -23,36 +23,36 @@ final class Network extends AbstractEntity
     /**
      * @var string
      */
-    public $ipAddress;
+    public string $ipAddress;
 
     /**
      * @var string
      */
-    public $gateway;
+    public string $gateway;
 
     /**
      * @var string
      */
-    public $type;
+    public string $type;
 
     /**
      * IPv4 or IPv6.
      *
      * @var int
      */
-    public $version;
+    public int $version;
 
     /**
      * IPv6 specific.
      *
      * @var string|null
      */
-    public $cidr;
+    public ?string $cidr;
 
     /**
      * IPv4 specific.
      *
      * @var string|null
      */
-    public $netmask;
+    public ?string $netmask;
 }

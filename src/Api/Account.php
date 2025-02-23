@@ -28,7 +28,7 @@ class Account extends AbstractApi
      *
      * @return AccountEntity
      */
-    public function getUserInformation()
+    public function getUserInformation(): AccountEntity
     {
         $account = $this->get('account');
 

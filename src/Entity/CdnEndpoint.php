@@ -22,37 +22,37 @@ final class CdnEndpoint extends AbstractEntity
     /**
      * @var string
      */
-    public $id;
+    public string $id;
 
     /**
      * @var string
      */
-    public $origin;
+    public string $origin;
 
     /**
      * @var string
      */
-    public $endpoint;
+    public string $endpoint;
 
     /**
      * @var string
      */
-    public $createdAt;
+    public string $createdAt;
 
     /**
      * @var int
      */
-    public $ttl;
+    public int $ttl;
 
     /**
      * @var string
      */
-    public $certificateId;
+    public string $certificateId;
 
     /**
      * @var string
      */
-    public $customDomain;
+    public string $customDomain;
 
     /**
      * @param string $createdAt

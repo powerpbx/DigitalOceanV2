@@ -27,7 +27,7 @@ abstract class AbstractEntity
      *
      * @return void
      */
-    public function __construct($parameters = null)
+    public function __construct(object|array|null $parameters = null)
     {
         if (null === $parameters) {
             return;
@@ -45,7 +45,7 @@ abstract class AbstractEntity
      *
      * @return mixed
      */
-    public function __get($property)
+    public function __get(string $property): mixed
     {
         $property = static::convertToCamelCase($property);
         if (\property_exists($this, $property)) {

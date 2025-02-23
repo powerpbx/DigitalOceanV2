@@ -36,21 +36,21 @@ final class ResultPager implements ResultPagerInterface
      *
      * @var Client
      */
-    private $client;
+    private Client $client;
 
     /**
      * The number of entries to request per page.
      *
      * @var int
      */
-    private $perPage;
+    private int $perPage;
 
     /**
      * The pagination result from the API.
      *
      * @var array<string,string>
      */
-    private $pagination;
+    private array $pagination;
 
     /**
      * Create a new result pager instance.
@@ -60,7 +60,7 @@ final class ResultPager implements ResultPagerInterface
      *
      * @return void
      */
-    public function __construct(Client $client, int $perPage = null)
+    public function __construct(Client $client, ?int $perPage = null)
     {
         if (null !== $perPage && ($perPage < 1 || $perPage > 200)) {
             throw new ValueError(\sprintf('%s::__construct(): Argument #2 ($perPage) must be between 1 and 200, or null', self::class));

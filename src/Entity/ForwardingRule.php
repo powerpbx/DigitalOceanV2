@@ -22,32 +22,32 @@ class ForwardingRule extends AbstractEntity
     /**
      * @var string
      */
-    public $entryProtocol;
+    public string $entryProtocol;
 
     /**
      * @var int
      */
-    public $entryPort;
+    public int $entryPort;
 
     /**
      * @var string
      */
-    public $targetProtocol;
+    public string $targetProtocol;
 
     /**
      * @var int
      */
-    public $targetPort;
+    public int $targetPort;
 
     /**
      * @var string|null
      */
-    public $certificateId;
+    public ?string $certificateId;
 
     /**
      * @var bool|null
      */
-    public $tlsPassthrough;
+    public ?bool $tlsPassthrough;
 
     /**
      * @return $this

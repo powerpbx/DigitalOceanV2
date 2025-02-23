@@ -29,7 +29,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringAlertEntity[]
      */
-    public function getAlerts()
+    public function getAlerts(): array
     {
         $alerts = $this->get('monitoring/alerts');
 
@@ -45,7 +45,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringAlertEntity
      */
-    public function getAlert(string $alertUUID)
+    public function getAlert(string $alertUUID): MonitoringAlertEntity
     {
         $alert = $this->get(\sprintf('monitoring/alerts/%s', $alertUUID));
 
@@ -63,7 +63,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletBandwidth(string $hostId, string $start, string $end, string $direction = 'inbound', string $interface = 'public')
+    public function getDropletBandwidth(string $hostId, string $start, string $end, string $direction = 'inbound', string $interface = 'public'): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/bandwidth',
@@ -88,7 +88,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletCpu(string $hostId, string $start, string $end)
+    public function getDropletCpu(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/cpu',
@@ -111,7 +111,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletTotalMemory(string $hostId, string $start, string $end)
+    public function getDropletTotalMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/memory_total',
@@ -134,7 +134,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletCachedMemory(string $hostId, string $start, string $end)
+    public function getDropletCachedMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/memory_cached',
@@ -157,7 +157,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletFreeMemory(string $hostId, string $start, string $end)
+    public function getDropletFreeMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/memory_free',
@@ -180,7 +180,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletAvailableMemory(string $hostId, string $start, string $end)
+    public function getDropletAvailableMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/memory_available',
@@ -203,7 +203,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletFilesystemFree(string $hostId, string $start, string $end)
+    public function getDropletFilesystemFree(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/filesystem_free',
@@ -226,7 +226,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletFilesystemSize(string $hostId, string $start, string $end)
+    public function getDropletFilesystemSize(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/filesystem_size',
@@ -249,7 +249,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletLoad1(string $hostId, string $start, string $end)
+    public function getDropletLoad1(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/load_1',
@@ -272,7 +272,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletLoad5(string $hostId, string $start, string $end)
+    public function getDropletLoad5(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/load_5',
@@ -295,7 +295,7 @@ class Monitoring extends AbstractApi
      *
      * @return MonitoringMetricEntity
      */
-    public function getDropletLoad15(string $hostId, string $start, string $end)
+    public function getDropletLoad15(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
         $metric = $this->get(
             'monitoring/metrics/droplet/load_15',

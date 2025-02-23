@@ -29,7 +29,7 @@ class Snapshot extends AbstractApi
      *
      * @return SnapshotEntity[]
      */
-    public function getAll(array $criteria = [])
+    public function getAll(array $criteria = []): array
     {
         $query = [];
 
@@ -51,7 +51,7 @@ class Snapshot extends AbstractApi
      *
      * @return SnapshotEntity
      */
-    public function getById(string $id)
+    public function getById(string $id): SnapshotEntity
     {
         $snapshot = $this->get(\sprintf('snapshots/%s', $id));
 
