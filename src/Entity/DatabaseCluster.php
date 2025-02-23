@@ -60,6 +60,8 @@ final class DatabaseCluster extends AbstractEntity
 
     public string $privateNetworkUuid;
 
+    public ?int $storageSizeMib;
+
     public function build(array $parameters): void
     {
         parent::build($parameters);
