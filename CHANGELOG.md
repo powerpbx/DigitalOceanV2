@@ -7,6 +7,7 @@ CHANGE LOG
 * Add PHP 8.4 support
 * Drop support for PHP earlier than 8.1
 * Moved various param types to native PHP types
+* Add `floatingIpLimit` to `Account` entity
 
 
 ## 4.9.0 (03/12/2023)
