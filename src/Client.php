@@ -71,13 +71,9 @@ class Client
      */
     private const USER_AGENT = 'digitalocean-php-api-client/5.0';
 
-    private Builder $httpClientBuilder;
+    private readonly Builder $httpClientBuilder;
+    private readonly History $responseHistory;
 
-    private History $responseHistory;
-
-    /**
-     * @return void
-     */
     public function __construct(Builder $httpClientBuilder = null)
     {
         $this->httpClientBuilder = $builder = $httpClientBuilder ?? new Builder();

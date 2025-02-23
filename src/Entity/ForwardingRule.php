@@ -34,7 +34,7 @@ class ForwardingRule extends AbstractEntity
     /**
      * @return $this
      */
-    public function setStandardHttpRules()
+    public function setStandardHttpRules(): self
     {
         $this->entryProtocol = 'http';
         $this->targetProtocol = 'http';
@@ -47,7 +47,7 @@ class ForwardingRule extends AbstractEntity
     /**
      * @return $this
      */
-    public function setStandardHttpsRules()
+    public function setStandardHttpsRules(): self
     {
         $this->entryProtocol = 'https';
         $this->targetProtocol = 'https';

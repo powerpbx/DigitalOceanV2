@@ -32,9 +32,9 @@ final class Size extends AbstractEntity
 
     public int $transfer;
 
-    public string $priceMonthly;
+    public int|float $priceMonthly;
 
-    public string $priceHourly;
+    public int|float $priceHourly;
 
     /**
      * @var string[]

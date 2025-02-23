@@ -22,9 +22,6 @@ use DigitalOceanV2\Exception\RuntimeException;
  */
 abstract class AbstractEntity
 {
-    /**
-     * @return void
-     */
     public function __construct(object|array|null $parameters = null)
     {
         if (null === $parameters) {
@@ -85,9 +82,6 @@ abstract class AbstractEntity
         return $settings;
     }
 
-    /**
-     * @param string $date DateTime string
-     */
     protected static function convertToIso8601(string $date): string
     {
         $date = new \DateTime($date);

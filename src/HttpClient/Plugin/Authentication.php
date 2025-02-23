@@ -32,13 +32,8 @@ final class Authentication implements Plugin
     /**
      * The authorization header.
      */
-    private string $header;
+    private readonly string $header;
 
-    /**
-     * Create a new authentication plugin instance.
-     *
-     * @return void
-     */
     public function __construct(string $token)
     {
         $this->header = \sprintf('Bearer %s', $token);

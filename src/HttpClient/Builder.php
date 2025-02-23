@@ -35,43 +35,18 @@ use Psr\Http\Message\UriFactoryInterface;
  */
 final class Builder
 {
-    /**
-     * The object that sends HTTP messages.
-     */
-    private ClientInterface $httpClient;
+    private readonly ClientInterface $httpClient;
+    private readonly RequestFactoryInterface $requestFactory;
+    private readonly StreamFactoryInterface $streamFactory;
+    private readonly UriFactoryInterface $uriFactory;
 
     /**
-     * The HTTP request factory.
-     */
-    private RequestFactoryInterface $requestFactory;
-
-    /**
-     * The HTTP stream factory.
-     */
-    private StreamFactoryInterface $streamFactory;
-
-    /**
-     * The URI factory.
-     */
-    private UriFactoryInterface $uriFactory;
-
-    /**
-     * The currently registered plugins.
-     *
      * @var Plugin[]
      */
-    private array $plugins = [];
+    private array $plugins;
 
-    /**
-     * A HTTP client with all our plugins.
-     */
     private ?HttpMethodsClientInterface $pluginClient;
 
-    /**
-     * Create a new http client builder instance.
-     *
-     * @return void
-     */
     public function __construct(
         ?ClientInterface $httpClient = null,
         ?RequestFactoryInterface $requestFactory = null,
@@ -82,6 +57,9 @@ final class Builder
         $this->requestFactory = $requestFactory ?? Psr17FactoryDiscovery::findRequestFactory();
         $this->streamFactory = $streamFactory ?? Psr17FactoryDiscovery::findStreamFactory();
         $this->uriFactory = $uriFactory ?? Psr17FactoryDiscovery::findUriFactory();
+
+        $this->plugins = [];
+        $this->pluginClient = null;
     }
 
     public function getHttpClient(): HttpMethodsClientInterface

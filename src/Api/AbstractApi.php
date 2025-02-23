@@ -34,29 +34,17 @@ abstract class AbstractApi
      */
     private const URI_PREFIX = '/v2/';
 
-    /**
-     * The client instance.
-     */
-    private Client $client;
+    private readonly Client $client;
 
-    /**
-     * The per page parameter.
-     */
     private ?int $perPage;
 
-    /**
-     * The page parameter.
-     */
     private ?int $page;
 
-    /**
-     * Create a new API instance.
-     *
-     * @return void
-     */
     public function __construct(Client $client)
     {
         $this->client = $client;
+        $this->perPage = null;
+        $this->page = null;
     }
 
     /**

@@ -31,28 +31,15 @@ final class ResultPager implements ResultPagerInterface
      */
     private const PER_PAGE = 100;
 
-    /**
-     * The client to use for pagination.
-     */
-    private Client $client;
+    private readonly Client $client;
+
+    private readonly int $perPage;
 
     /**
-     * The number of entries to request per page.
-     */
-    private int $perPage;
-
-    /**
-     * The pagination result from the API.
-     *
      * @var array<string,string>
      */
     private array $pagination;
 
-    /**
-     * Create a new result pager instance.
-     *
-     * @return void
-     */
     public function __construct(Client $client, ?int $perPage = null)
     {
         if (null !== $perPage && ($perPage < 1 || $perPage > 200)) {
