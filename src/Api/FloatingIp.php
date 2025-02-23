@@ -38,11 +38,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $ipAddress
-     *
      * @throws ExceptionInterface
-     *
-     * @return FloatingIpEntity
      */
     public function getById(string $ipAddress): FloatingIpEntity
     {
@@ -52,11 +48,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param int $dropletId
-     *
      * @throws ExceptionInterface
-     *
-     * @return FloatingIpEntity
      */
     public function createAssigned(int $dropletId): FloatingIpEntity
     {
@@ -66,11 +58,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $regionSlug
-     *
      * @throws ExceptionInterface
-     *
-     * @return FloatingIpEntity
      */
     public function createReserved(string $regionSlug): FloatingIpEntity
     {
@@ -80,11 +68,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $ipAddress
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $ipAddress): void
     {
@@ -92,8 +76,6 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $ipAddress
-     *
      * @throws ExceptionInterface
      *
      * @return ActionEntity[]
@@ -108,12 +90,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $ipAddress
-     * @param int    $actionId
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function getActionById(string $ipAddress, int $actionId): ActionEntity
     {
@@ -123,12 +100,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $ipAddress
-     * @param int    $dropletId
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function assign(string $ipAddress, int $dropletId): ActionEntity
     {
@@ -136,11 +108,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $ipAddress
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function unassign(string $ipAddress): ActionEntity
     {
@@ -148,12 +116,7 @@ class FloatingIp extends AbstractApi
     }
 
     /**
-     * @param string $ipAddress
-     * @param array  $options
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     private function executeAction(string $ipAddress, array $options): ActionEntity
     {

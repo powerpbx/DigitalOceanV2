@@ -19,34 +19,16 @@ namespace DigitalOceanV2\Entity;
  */
 final class LoadBalancer extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var int
-     */
     public int $name;
 
-    /**
-     * @var string
-     */
     public string $ip;
 
-    /**
-     * @var string
-     */
     public string $algorithm;
 
-    /**
-     * @var string
-     */
     public string $status;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
     /**
@@ -54,34 +36,16 @@ final class LoadBalancer extends AbstractEntity
      */
     public array $forwardingRules;
 
-    /**
-     * @var HealthCheck
-     */
     public HealthCheck $healthCheck;
 
-    /**
-     * @var StickySession
-     */
     public StickySession $stickySessions;
 
-    /**
-     * @var Region
-     */
     public Region $region;
 
-    /**
-     * @var string
-     */
     public string $tag;
 
-    /**
-     * @var array
-     */
     public array $dropletIds;
 
-    /**
-     * @var bool
-     */
     public bool $redirectHttpToHttps;
 
     /**
@@ -89,11 +53,6 @@ final class LoadBalancer extends AbstractEntity
      */
     public int $httpIdleTimeoutSeconds;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
@@ -136,9 +95,6 @@ final class LoadBalancer extends AbstractEntity
         parent::build($parameters);
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         return [

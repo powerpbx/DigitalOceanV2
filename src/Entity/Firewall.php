@@ -20,56 +20,24 @@ namespace DigitalOceanV2\Entity;
  */
 final class Firewall extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var string
-     */
     public string $status;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @var array
-     */
     public array $pendingChanges;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var array
-     */
     public array $inboundRules;
 
-    /**
-     * @var array
-     */
     public array $outboundRules;
 
-    /**
-     * @var array
-     */
     public array $dropletIds;
 
-    /**
-     * @var array
-     */
     public array $tags;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
@@ -105,19 +73,11 @@ final class Firewall extends AbstractEntity
         parent::build($parameters);
     }
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         return [

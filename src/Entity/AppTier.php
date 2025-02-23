@@ -20,28 +20,13 @@ namespace DigitalOceanV2\Entity;
  */
 final class AppTier extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $slug;
 
-    /**
-     * @var string
-     */
     public string $storageBytes;
 
-    /**
-     * @var string
-     */
     public string $egressBandwidthBytes;
 
-    /**
-     * @var string
-     */
     public string $buildSeconds;
 }

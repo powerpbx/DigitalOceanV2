@@ -20,19 +20,10 @@ namespace DigitalOceanV2\Entity;
  */
 final class Region extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $slug;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var bool
-     */
     public bool $available;
 
     /**

@@ -39,11 +39,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $alertUUID
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringAlertEntity
      */
     public function getAlert(string $alertUUID): MonitoringAlertEntity
     {
@@ -53,15 +49,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     * @param string $direction
-     * @param string $interface
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletBandwidth(string $hostId, string $start, string $end, string $direction = 'inbound', string $interface = 'public'): MonitoringMetricEntity
     {
@@ -80,13 +68,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletCpu(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -103,13 +85,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletTotalMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -126,13 +102,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletCachedMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -149,13 +119,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletFreeMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -172,13 +136,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletAvailableMemory(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -195,13 +153,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletFilesystemFree(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -218,13 +170,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletFilesystemSize(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -241,13 +187,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletLoad1(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -264,13 +204,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletLoad5(string $hostId, string $start, string $end): MonitoringMetricEntity
     {
@@ -287,13 +221,7 @@ class Monitoring extends AbstractApi
     }
 
     /**
-     * @param string $hostId
-     * @param string $start
-     * @param string $end
-     *
      * @throws ExceptionInterface
-     *
-     * @return MonitoringMetricEntity
      */
     public function getDropletLoad15(string $hostId, string $start, string $end): MonitoringMetricEntity
     {

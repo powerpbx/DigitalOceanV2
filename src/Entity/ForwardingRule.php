@@ -19,34 +19,16 @@ namespace DigitalOceanV2\Entity;
  */
 class ForwardingRule extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $entryProtocol;
 
-    /**
-     * @var int
-     */
     public int $entryPort;
 
-    /**
-     * @var string
-     */
     public string $targetProtocol;
 
-    /**
-     * @var int
-     */
     public int $targetPort;
 
-    /**
-     * @var string|null
-     */
     public ?string $certificateId;
 
-    /**
-     * @var bool|null
-     */
     public ?bool $tlsPassthrough;
 
     /**

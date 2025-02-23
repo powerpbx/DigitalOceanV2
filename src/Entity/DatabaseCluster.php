@@ -19,34 +19,16 @@ namespace DigitalOceanV2\Entity;
  */
 final class DatabaseCluster extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $engine;
 
-    /**
-     * @var string
-     */
     public string $version;
 
-    /**
-     * @var DatabaseConnection
-     */
     public DatabaseConnection $connection;
 
-    /**
-     * @var DatabaseConnection
-     */
     public DatabaseConnection $privateConnection;
 
     /**
@@ -59,34 +41,16 @@ final class DatabaseCluster extends AbstractEntity
      */
     public array $dbNames = [];
 
-    /**
-     * @var int
-     */
     public int $numNodes;
 
-    /**
-     * @var string
-     */
     public string $size;
 
-    /**
-     * @var string
-     */
     public string $region;
 
-    /**
-     * @var string
-     */
     public string $status;
 
-    /**
-     * @var DatabaseMaintenanceWindow
-     */
     public DatabaseMaintenanceWindow $maintenanceWindow;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
     /**
@@ -94,16 +58,8 @@ final class DatabaseCluster extends AbstractEntity
      */
     public array $tags = [];
 
-    /**
-     * @var string
-     */
     public string $privateNetworkUuid;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         parent::build($parameters);
@@ -132,11 +88,6 @@ final class DatabaseCluster extends AbstractEntity
         }
     }
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

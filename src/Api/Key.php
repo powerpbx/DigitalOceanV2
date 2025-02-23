@@ -38,11 +38,7 @@ class Key extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return KeyEntity
      */
     public function getById(int $id): KeyEntity
     {
@@ -52,11 +48,7 @@ class Key extends AbstractApi
     }
 
     /**
-     * @param string $fingerprint
-     *
      * @throws ExceptionInterface
-     *
-     * @return KeyEntity
      */
     public function getByFingerprint(string $fingerprint): KeyEntity
     {
@@ -66,12 +58,7 @@ class Key extends AbstractApi
     }
 
     /**
-     * @param string $name
-     * @param string $publicKey
-     *
      * @throws ExceptionInterface
-     *
-     * @return KeyEntity
      */
     public function create(string $name, string $publicKey): KeyEntity
     {
@@ -84,12 +71,7 @@ class Key extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return KeyEntity
      */
     public function update(string $id, string $name): KeyEntity
     {
@@ -101,11 +83,7 @@ class Key extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $id): void
     {

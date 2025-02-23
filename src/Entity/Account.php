@@ -20,51 +20,22 @@ namespace DigitalOceanV2\Entity;
  */
 final class Account extends AbstractEntity
 {
-    /**
-     * @var int
-     */
     public int $dropletLimit;
 
-    /**
-     * @var int
-     */
     public int $floatingIpLimit;
 
-    /**
-     * @var string
-     */
     public string $email;
 
-    /**
-     * @var string
-     */
     public string $uuid;
 
-    /**
-     * @var bool
-     */
     public bool $emailVerified;
 
-    /**
-     * @var string
-     */
     public string $status;
 
-    /**
-     * @var string
-     */
     public string $statusMessage;
 
-    /**
-     * @var Team
-     */
     public Team $team;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {

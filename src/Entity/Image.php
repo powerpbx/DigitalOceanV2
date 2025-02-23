@@ -20,49 +20,22 @@ namespace DigitalOceanV2\Entity;
  */
 final class Image extends AbstractEntity
 {
-    /**
-     * @var int
-     */
     public int $id;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $type;
 
-    /**
-     * @var string
-     */
     public string $distribution;
 
-    /**
-     * @var string
-     */
     public string $slug;
 
-    /**
-     * @var int
-     */
     public int $minDiskSize;
 
-    /**
-     * @var float
-     */
     public float $sizeGigabytes;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @var bool
-     */
     public bool $public;
 
     /**
@@ -70,9 +43,6 @@ final class Image extends AbstractEntity
      */
     public array $regions = [];
 
-    /**
-     * @var string
-     */
     public string $description;
 
     /**
@@ -80,21 +50,10 @@ final class Image extends AbstractEntity
      */
     public array $tags = [];
 
-    /**
-     * @var string
-     */
     public string $status;
 
-    /**
-     * @var string
-     */
     public string $error_message;
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

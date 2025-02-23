@@ -20,23 +20,11 @@ namespace DigitalOceanV2\Entity;
  */
 final class ProjectResource extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $urn;
 
-    /**
-     * @var string
-     */
     public string $assignedAt;
 
-    /**
-     * @var array
-     */
     public array $links;
 
-    /**
-     * @var string
-     */
     public string $status;
 }

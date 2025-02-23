@@ -43,11 +43,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppEntity
      */
     public function getByID(string $appID): AppEntity
     {
@@ -57,11 +53,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param array $spec
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppEntity
      */
     public function create(array $spec): AppEntity
     {
@@ -73,12 +65,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     * @param array  $spec
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppEntity
      */
     public function update(string $appID, array $spec): AppEntity
     {
@@ -90,11 +77,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $appID): void
     {
@@ -102,8 +85,6 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     *
      * @throws ExceptionInterface
      *
      * @return AppDeploymentEntity[]
@@ -118,11 +99,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $deploymentID
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppDeploymentEntity
      */
     public function getAppDeployment(string $appID, string $deploymentID): AppDeploymentEntity
     {
@@ -132,12 +109,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     * @param bool   $force_build
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppDeploymentEntity
      */
     public function createAppDeployment(string $appID, bool $force_build = true): AppDeploymentEntity
     {
@@ -149,12 +121,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     * @param string $deploymentID
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppDeploymentEntity
      */
     public function cancelAppDeployment(string $appID, string $deploymentID): AppDeploymentEntity
     {
@@ -164,13 +131,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     * @param string $deploymentID
-     * @param string $componentName
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppDeploymentLogEntity
      */
     public function getDeploymentLogs(string $appID, string $deploymentID, string $componentName): AppDeploymentLogEntity
     {
@@ -180,12 +141,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $appID
-     * @param string $deploymentID
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppDeploymentLogEntity
      */
     public function getAggregateDeploymentLogs(string $appID, string $deploymentID): AppDeploymentLogEntity
     {
@@ -223,11 +179,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $slug
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppTierEntity
      */
     public function getTierBySlug(string $slug): AppTierEntity
     {
@@ -251,11 +203,7 @@ class App extends AbstractApi
     }
 
     /**
-     * @param string $slug
-     *
      * @throws ExceptionInterface
-     *
-     * @return AppInstanceSizeEntity
      */
     public function getInstanceSizeBySlug(string $slug): AppInstanceSizeEntity
     {

@@ -25,8 +25,6 @@ use DigitalOceanV2\Exception\InvalidRecordException;
 class DomainRecord extends AbstractApi
 {
     /**
-     * @param string $domainName
-     *
      * @throws ExceptionInterface
      *
      * @return DomainRecordEntity[]
@@ -41,12 +39,7 @@ class DomainRecord extends AbstractApi
     }
 
     /**
-     * @param string $domainName
-     * @param int    $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return DomainRecordEntity
      */
     public function getById(string $domainName, int $id): DomainRecordEntity
     {
@@ -56,20 +49,7 @@ class DomainRecord extends AbstractApi
     }
 
     /**
-     * @param string $domainName
-     * @param string $type
-     * @param string $name
-     * @param string $data
-     * @param int    $priority
-     * @param int    $port
-     * @param int    $weight
-     * @param int    $flags
-     * @param string $tag
-     * @param int    $ttl
-     *
      * @throws ExceptionInterface
-     *
-     * @return DomainRecordEntity
      */
     public function create(string $domainName, string $type, string $name, string $data, ?int $priority = null, ?int $port = null, ?int $weight = null, ?int $flags = null, ?string $tag = null, ?int $ttl = null): DomainRecordEntity
     {
@@ -119,20 +99,7 @@ class DomainRecord extends AbstractApi
     }
 
     /**
-     * @param string      $domainName
-     * @param int         $recordId
-     * @param string|null $name
-     * @param string|null $data
-     * @param int|null    $priority
-     * @param int|null    $port
-     * @param int|null    $weight
-     * @param int|null    $flags
-     * @param string|null $tag
-     * @param int|null    $ttl
-     *
      * @throws ExceptionInterface
-     *
-     * @return DomainRecordEntity
      */
     public function update(string $domainName, int $recordId, ?string $name = null, ?string $data = null, ?int $priority = null, ?int $port = null, ?int $weight = null, ?int $flags = null, ?string $tag = null, ?int $ttl = null): DomainRecordEntity
     {
@@ -155,13 +122,7 @@ class DomainRecord extends AbstractApi
     }
 
     /**
-     * @param string $domainName
-     * @param int    $recordId
-     * @param string $data
-     *
      * @throws ExceptionInterface
-     *
-     * @return DomainRecordEntity
      */
     public function updateData(string $domainName, int $recordId, string $data): DomainRecordEntity
     {
@@ -169,13 +130,7 @@ class DomainRecord extends AbstractApi
     }
 
     /**
-     * @param string $domainName
-     * @param int    $recordId
-     * @param array  $fields
-     *
      * @throws ExceptionInterface
-     *
-     * @return DomainRecordEntity
      */
     public function updateFields(string $domainName, int $recordId, array $fields): DomainRecordEntity
     {
@@ -185,12 +140,7 @@ class DomainRecord extends AbstractApi
     }
 
     /**
-     * @param string $domainName
-     * @param int    $recordId
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $domainName, int $recordId): void
     {

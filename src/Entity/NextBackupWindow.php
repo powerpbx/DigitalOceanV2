@@ -20,13 +20,7 @@ namespace DigitalOceanV2\Entity;
  */
 final class NextBackupWindow extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $start;
 
-    /**
-     * @var string
-     */
     public string $end;
 }

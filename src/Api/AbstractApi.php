@@ -36,29 +36,21 @@ abstract class AbstractApi
 
     /**
      * The client instance.
-     *
-     * @var Client
      */
     private Client $client;
 
     /**
      * The per page parameter.
-     *
-     * @var int|null
      */
     private ?int $perPage;
 
     /**
      * The page parameter.
-     *
-     * @var int|null
      */
     private ?int $page;
 
     /**
      * Create a new API instance.
-     *
-     * @param Client $client
      *
      * @return void
      */
@@ -70,13 +62,9 @@ abstract class AbstractApi
     /**
      * Send a GET request with query params.
      *
-     * @param string               $uri
-     * @param array                $params
      * @param array<string,string> $headers
      *
      * @throws ExceptionInterface
-     *
-     * @return stdClass
      */
     protected function get(string $uri, array $params = [], array $headers = []): stdClass
     {
@@ -96,13 +84,9 @@ abstract class AbstractApi
     /**
      * Send a POST request with JSON-encoded params.
      *
-     * @param string               $uri
-     * @param array                $params
      * @param array<string,string> $headers
      *
      * @throws ExceptionInterface
-     *
-     * @return stdClass
      */
     protected function post(string $uri, array $params = [], array $headers = []): stdClass
     {
@@ -120,13 +104,9 @@ abstract class AbstractApi
     /**
      * Send a PUT request with JSON-encoded params.
      *
-     * @param string               $uri
-     * @param array                $params
      * @param array<string,string> $headers
      *
      * @throws ExceptionInterface
-     *
-     * @return stdClass
      */
     protected function put(string $uri, array $params = [], array $headers = []): stdClass
     {
@@ -144,14 +124,10 @@ abstract class AbstractApi
     /**
      * Send a DELETE request with JSON-encoded params.
      *
-     * @param string               $uri
-     * @param array                $params
      * @param array<string,string> $headers
      * @param array<string,string> $queryParams
      *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     protected function delete(string $uri, array $params = [], array $headers = [], array $queryParams = []): void
     {
@@ -166,11 +142,6 @@ abstract class AbstractApi
 
     /**
      * Prepare the request URI.
-     *
-     * @param string $uri
-     * @param array  $query
-     *
-     * @return string
      */
     private static function prepareUri(string $uri, array $query = []): string
     {
@@ -179,10 +150,6 @@ abstract class AbstractApi
 
     /**
      * Prepare the request JSON body.
-     *
-     * @param array $params
-     *
-     * @return string|null
      */
     private static function prepareJsonBody(array $params): ?string
     {

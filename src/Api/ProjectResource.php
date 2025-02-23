@@ -24,8 +24,6 @@ use DigitalOceanV2\Exception\ExceptionInterface;
 class ProjectResource extends AbstractApi
 {
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
      *
      * @return ProjectResourceEntity[]
@@ -40,7 +38,6 @@ class ProjectResource extends AbstractApi
     }
 
     /**
-     * @param string        $id
      * @param array<string> $resources
      *
      * @throws ExceptionInterface

@@ -19,14 +19,8 @@ namespace DigitalOceanV2\Entity;
  */
 final class Volume extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var Region
-     */
     public Region $region;
 
     /**
@@ -34,34 +28,16 @@ final class Volume extends AbstractEntity
      */
     public array $dropletIds = [];
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $description;
 
-    /**
-     * @var int
-     */
     public int $sizeGigabytes;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @var string
-     */
     public string $filesystemType;
 
-    /**
-     * @var string
-     */
     public string $filesystemLabel;
 
     /**
@@ -69,11 +45,6 @@ final class Volume extends AbstractEntity
      */
     public array $tags = [];
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         parent::build($parameters);
@@ -91,11 +62,6 @@ final class Volume extends AbstractEntity
         }
     }
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

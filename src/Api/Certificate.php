@@ -37,11 +37,7 @@ class Certificate extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return CertificateEntity
      */
     public function getById(string $id): CertificateEntity
     {
@@ -51,14 +47,7 @@ class Certificate extends AbstractApi
     }
 
     /**
-     * @param string      $name
-     * @param string      $privateKey
-     * @param string      $leafCertificate
-     * @param string|null $certificateChain
-     *
      * @throws ExceptionInterface
-     *
-     * @return CertificateEntity
      */
     public function create(string $name, string $privateKey, string $leafCertificate, ?string $certificateChain = null): CertificateEntity
     {
@@ -79,12 +68,9 @@ class Certificate extends AbstractApi
     }
 
     /**
-     * @param string   $name
      * @param string[] $dnsNames
      *
      * @throws ExceptionInterface
-     *
-     * @return CertificateEntity
      */
     public function createLetsEncrypt(string $name, array $dnsNames): CertificateEntity
     {
@@ -100,11 +86,7 @@ class Certificate extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $id): void
     {

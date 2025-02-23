@@ -37,29 +37,21 @@ final class Builder
 {
     /**
      * The object that sends HTTP messages.
-     *
-     * @var ClientInterface
      */
     private ClientInterface $httpClient;
 
     /**
      * The HTTP request factory.
-     *
-     * @var RequestFactoryInterface
      */
     private RequestFactoryInterface $requestFactory;
 
     /**
      * The HTTP stream factory.
-     *
-     * @var StreamFactoryInterface
      */
     private StreamFactoryInterface $streamFactory;
 
     /**
      * The URI factory.
-     *
-     * @var UriFactoryInterface
      */
     private UriFactoryInterface $uriFactory;
 
@@ -72,18 +64,11 @@ final class Builder
 
     /**
      * A HTTP client with all our plugins.
-     *
-     * @var HttpMethodsClientInterface|null
      */
     private ?HttpMethodsClientInterface $pluginClient;
 
     /**
      * Create a new http client builder instance.
-     *
-     * @param ClientInterface|null         $httpClient
-     * @param RequestFactoryInterface|null $requestFactory
-     * @param StreamFactoryInterface|null  $streamFactory
-     * @param UriFactoryInterface|null     $uriFactory
      *
      * @return void
      */
@@ -99,9 +84,6 @@ final class Builder
         $this->uriFactory = $uriFactory ?? Psr17FactoryDiscovery::findUriFactory();
     }
 
-    /**
-     * @return HttpMethodsClientInterface
-     */
     public function getHttpClient(): HttpMethodsClientInterface
     {
         if (null === $this->pluginClient) {
@@ -119,8 +101,6 @@ final class Builder
 
     /**
      * Get the request factory.
-     *
-     * @return RequestFactoryInterface
      */
     public function getRequestFactory(): RequestFactoryInterface
     {
@@ -129,8 +109,6 @@ final class Builder
 
     /**
      * Get the stream factory.
-     *
-     * @return StreamFactoryInterface
      */
     public function getStreamFactory(): StreamFactoryInterface
     {
@@ -139,8 +117,6 @@ final class Builder
 
     /**
      * Get the URI factory.
-     *
-     * @return UriFactoryInterface
      */
     public function getUriFactory(): UriFactoryInterface
     {
@@ -149,10 +125,6 @@ final class Builder
 
     /**
      * Add a new plugin to the end of the plugin chain.
-     *
-     * @param Plugin $plugin
-     *
-     * @return void
      */
     public function addPlugin(Plugin $plugin): void
     {
@@ -162,10 +134,6 @@ final class Builder
 
     /**
      * Remove a plugin by its fully qualified class name (FQCN).
-     *
-     * @param string $fqcn
-     *
-     * @return void
      */
     public function removePlugin(string $fqcn): void
     {

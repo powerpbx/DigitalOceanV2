@@ -31,15 +31,11 @@ final class Authentication implements Plugin
 {
     /**
      * The authorization header.
-     *
-     * @var string
      */
     private string $header;
 
     /**
      * Create a new authentication plugin instance.
-     *
-     * @param string $token
      *
      * @return void
      */
@@ -51,7 +47,6 @@ final class Authentication implements Plugin
     /**
      * Handle the request and return the response coming from the next callable.
      *
-     * @param \Psr\Http\Message\RequestInterface                     $request
      * @param callable(RequestInterface): Promise<ResponseInterface> $next
      * @param callable(RequestInterface): Promise<ResponseInterface> $first
      *

@@ -24,14 +24,7 @@ use DigitalOceanV2\Exception\InvalidArgumentException;
 class CdnEndpoint extends AbstractApi
 {
     /**
-     * @param string      $origin
-     * @param int|null    $ttl
-     * @param string|null $certificateId
-     * @param string|null $customDomain
-     *
      * @throws ExceptionInterface
-     *
-     * @return CdnEndpointEntity
      */
     public function create(string $origin, ?int $ttl = null, ?string $certificateId = null, ?string $customDomain = null): CdnEndpointEntity
     {
@@ -53,11 +46,7 @@ class CdnEndpoint extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return CdnEndpointEntity
      */
     public function getById(string $id): CdnEndpointEntity
     {
@@ -81,15 +70,8 @@ class CdnEndpoint extends AbstractApi
     }
 
     /**
-     * @param string      $id
-     * @param int|null    $ttl
-     * @param string|null $certificateId
-     * @param string|null $customDomain
-     *
      * @throws ExceptionInterface
      * @throws InvalidArgumentException
-     *
-     * @return CdnEndpointEntity
      */
     public function update(string $id, ?int $ttl = null, ?string $certificateId = null, ?string $customDomain = null): CdnEndpointEntity
     {
@@ -107,11 +89,7 @@ class CdnEndpoint extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $id): void
     {
@@ -119,12 +97,7 @@ class CdnEndpoint extends AbstractApi
     }
 
     /**
-     * @param string     $id
-     * @param array|null $fileList
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function purgeCache(string $id, ?array $fileList = null): void
     {

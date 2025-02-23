@@ -38,11 +38,7 @@ class Action extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function getById(int $id): ActionEntity
     {

@@ -19,19 +19,10 @@ namespace DigitalOceanV2\Entity;
  */
 final class DatabaseMaintenanceWindow extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $day;
 
-    /**
-     * @var string
-     */
     public string $hour;
 
-    /**
-     * @var bool
-     */
     public bool $pending;
 
     /**

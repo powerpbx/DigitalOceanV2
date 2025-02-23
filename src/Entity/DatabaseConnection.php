@@ -19,38 +19,17 @@ namespace DigitalOceanV2\Entity;
  */
 final class DatabaseConnection extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $uri;
 
-    /**
-     * @var string
-     */
     public string $database;
 
-    /**
-     * @var string
-     */
     public string $host;
 
-    /**
-     * @var int
-     */
     public int $port;
 
-    /**
-     * @var string
-     */
     public string $user;
 
-    /**
-     * @var string
-     */
     public string $password;
 
-    /**
-     * @var bool
-     */
     public bool $ssl;
 }

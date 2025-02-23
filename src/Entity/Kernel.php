@@ -20,18 +20,9 @@ namespace DigitalOceanV2\Entity;
  */
 final class Kernel extends AbstractEntity
 {
-    /**
-     * @var int
-     */
     public int $id;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $version;
 }

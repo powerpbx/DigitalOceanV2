@@ -20,19 +20,10 @@ namespace DigitalOceanV2\Entity;
  */
 abstract class FirewallRule extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $protocol;
 
-    /**
-     * @var string
-     */
     public string $ports;
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         $data = [

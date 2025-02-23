@@ -25,8 +25,6 @@ use DigitalOceanV2\Exception\ExceptionInterface;
 class Image extends AbstractApi
 {
     /**
-     * @param array $criteria
-     *
      * @throws ExceptionInterface
      *
      * @return ImageEntity[]
@@ -51,11 +49,7 @@ class Image extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ImageEntity
      */
     public function getById(int $id): ImageEntity
     {
@@ -65,11 +59,7 @@ class Image extends AbstractApi
     }
 
     /**
-     * @param string $slug
-     *
      * @throws ExceptionInterface
-     *
-     * @return ImageEntity
      */
     public function getBySlug(string $slug): ImageEntity
     {
@@ -79,12 +69,7 @@ class Image extends AbstractApi
     }
 
     /**
-     * @param int    $id
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return ImageEntity
      */
     public function update(int $id, string $name): ImageEntity
     {
@@ -94,11 +79,7 @@ class Image extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(int $id): void
     {
@@ -106,12 +87,7 @@ class Image extends AbstractApi
     }
 
     /**
-     * @param int    $id
-     * @param string $regionSlug
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function transfer(int $id, string $regionSlug): ActionEntity
     {
@@ -121,11 +97,7 @@ class Image extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function convert(int $id): ActionEntity
     {
@@ -135,12 +107,7 @@ class Image extends AbstractApi
     }
 
     /**
-     * @param int $id
-     * @param int $actionId
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function getAction(int $id, int $actionId): ActionEntity
     {

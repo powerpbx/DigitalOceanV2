@@ -19,13 +19,7 @@ namespace DigitalOceanV2\Entity;
  */
 final class Tag extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var array
-     */
     public array $resources;
 }

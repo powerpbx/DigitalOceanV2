@@ -19,34 +19,16 @@ namespace DigitalOceanV2\Entity;
  */
 final class DatabaseReplica extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var DatabaseConnection
-     */
     public DatabaseConnection $connection;
 
-    /**
-     * @var DatabaseConnection
-     */
     public DatabaseConnection $privateConnection;
 
-    /**
-     * @var string
-     */
     public string $region;
 
-    /**
-     * @var string
-     */
     public string $status;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
     /**
@@ -54,16 +36,8 @@ final class DatabaseReplica extends AbstractEntity
      */
     public array $tags = [];
 
-    /**
-     * @var string
-     */
     public string $privateNetworkUuid;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         parent::build($parameters);
@@ -79,11 +53,6 @@ final class DatabaseReplica extends AbstractEntity
         }
     }
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

@@ -27,8 +27,6 @@ use DigitalOceanV2\Exception\ExceptionInterface;
 class Droplet extends AbstractApi
 {
     /**
-     * @param string|null $tag
-     *
      * @throws ExceptionInterface
      *
      * @return DropletEntity[]
@@ -43,8 +41,6 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
      *
      * @return DropletEntity[]
@@ -73,11 +69,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return DropletEntity
      */
     public function getById(int $id): DropletEntity
     {
@@ -87,19 +79,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param array|string $names
-     * @param string       $region
-     * @param string       $size
-     * @param string|int   $image
-     * @param bool         $backups
-     * @param bool         $ipv6
-     * @param string|bool  $vpcUuid
-     * @param int[]        $sshKeys
-     * @param string       $userData
-     * @param bool         $monitoring
-     * @param array        $volumes
-     * @param array        $tags
-     * @param bool         $disableAgent
+     * @param int[] $sshKeys
      *
      * @throws ExceptionInterface
      *
@@ -156,11 +136,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(int $id): void
     {
@@ -168,11 +144,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param string $tag
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function removeTagged(string $tag): void
     {
@@ -180,8 +152,6 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
      *
      * @return KernelEntity[]
@@ -196,8 +166,6 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
      *
      * @return ImageEntity[]
@@ -212,8 +180,6 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
      *
      * @return ImageEntity[]
@@ -228,8 +194,6 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
      *
      * @return ActionEntity[]
@@ -244,12 +208,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     * @param int $actionId
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function getActionById(int $id, int $actionId): ActionEntity
     {
@@ -259,11 +218,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function reboot(int $id): ActionEntity
     {
@@ -271,11 +226,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function powerCycle(int $id): ActionEntity
     {
@@ -283,11 +234,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function shutdown(int $id): ActionEntity
     {
@@ -295,11 +242,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function powerOff(int $id): ActionEntity
     {
@@ -307,11 +250,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function powerOn(int $id): ActionEntity
     {
@@ -319,11 +258,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function passwordReset(int $id): ActionEntity
     {
@@ -331,13 +266,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int    $id
-     * @param string $size
-     * @param bool   $disk
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function resize(int $id, string $size, bool $disk = true): ActionEntity
     {
@@ -345,12 +274,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     * @param int $image
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function restore(int $id, int $image): ActionEntity
     {
@@ -358,12 +282,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int        $id
-     * @param int|string $image
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function rebuild(int $id, int|string $image): ActionEntity
     {
@@ -371,12 +290,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int    $id
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function rename(int $id, string $name): ActionEntity
     {
@@ -384,12 +298,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     * @param int $kernel
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function changeKernel(int $id, int $kernel): ActionEntity
     {
@@ -397,11 +306,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function enableIpv6(int $id): ActionEntity
     {
@@ -409,11 +314,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function enableBackups(int $id): ActionEntity
     {
@@ -421,11 +322,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function disableBackups(int $id): ActionEntity
     {
@@ -433,11 +330,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function enablePrivateNetworking(int $id): ActionEntity
     {
@@ -445,12 +338,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int    $id
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function snapshot(int $id, string $name): ActionEntity
     {
@@ -458,12 +346,7 @@ class Droplet extends AbstractApi
     }
 
     /**
-     * @param int   $id
-     * @param array $options
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     private function executeAction(int $id, array $options): ActionEntity
     {

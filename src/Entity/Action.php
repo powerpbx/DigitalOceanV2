@@ -20,56 +20,24 @@ namespace DigitalOceanV2\Entity;
  */
 final class Action extends AbstractEntity
 {
-    /**
-     * @var int
-     */
     public int $id;
 
-    /**
-     * @var string
-     */
     public string $status;
 
-    /**
-     * @var string
-     */
     public string $type;
 
-    /**
-     * @var string|null
-     */
     public ?string $startedAt;
 
-    /**
-     * @var string|null
-     */
     public ?string $completedAt;
 
-    /**
-     * @var string
-     */
     public string $resourceId;
 
-    /**
-     * @var string
-     */
     public string $resourceType;
 
-    /**
-     * @var Region
-     */
     public Region $region;
 
-    /**
-     * @var string
-     */
     public string $regionSlug;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         parent::build($parameters);
@@ -81,21 +49,11 @@ final class Action extends AbstractEntity
         }
     }
 
-    /**
-     * @param string $startedAt
-     *
-     * @return void
-     */
     public function setStartedAt(string $startedAt): void
     {
         $this->startedAt = static::convertToIso8601($startedAt);
     }
 
-    /**
-     * @param string|null $completedAt
-     *
-     * @return void
-     */
     public function setCompletedAt(?string $completedAt): void
     {
         $this->completedAt = null === $completedAt ? null : static::convertToIso8601($completedAt);

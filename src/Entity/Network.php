@@ -20,39 +20,24 @@ namespace DigitalOceanV2\Entity;
  */
 final class Network extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $ipAddress;
 
-    /**
-     * @var string
-     */
     public string $gateway;
 
-    /**
-     * @var string
-     */
     public string $type;
 
     /**
      * IPv4 or IPv6.
-     *
-     * @var int
      */
     public int $version;
 
     /**
      * IPv6 specific.
-     *
-     * @var string|null
      */
     public ?string $cidr;
 
     /**
      * IPv4 specific.
-     *
-     * @var string|null
      */
     public ?string $netmask;
 }

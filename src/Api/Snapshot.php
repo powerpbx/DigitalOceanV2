@@ -23,8 +23,6 @@ use DigitalOceanV2\Exception\ExceptionInterface;
 class Snapshot extends AbstractApi
 {
     /**
-     * @param array $criteria
-     *
      * @throws ExceptionInterface
      *
      * @return SnapshotEntity[]
@@ -45,11 +43,7 @@ class Snapshot extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return SnapshotEntity
      */
     public function getById(string $id): SnapshotEntity
     {
@@ -59,11 +53,7 @@ class Snapshot extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $id): void
     {

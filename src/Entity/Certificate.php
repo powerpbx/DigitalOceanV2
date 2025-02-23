@@ -19,36 +19,16 @@ namespace DigitalOceanV2\Entity;
  */
 final class Certificate extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $notAfter;
 
-    /**
-     * @var string
-     */
     public string $sha1Fingerprint;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

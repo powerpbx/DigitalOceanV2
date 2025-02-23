@@ -19,31 +19,14 @@ namespace DigitalOceanV2\Entity;
  */
 final class DatabaseUser extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $role;
 
-    /**
-     * @var string
-     */
     public string $password;
 
-    /**
-     * @var DatabaseMysqlSettings
-     */
     public DatabaseMysqlSettings $mysqlSettings;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         parent::build($parameters);

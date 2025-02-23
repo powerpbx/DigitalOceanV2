@@ -20,44 +20,20 @@ namespace DigitalOceanV2\Entity;
  */
 final class Size extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $slug;
 
-    /**
-     * @var bool
-     */
     public bool $available;
 
-    /**
-     * @var int
-     */
     public int $memory;
 
-    /**
-     * @var int
-     */
     public int $vcpus;
 
-    /**
-     * @var int
-     */
     public int $disk;
 
-    /**
-     * @var int
-     */
     public int $transfer;
 
-    /**
-     * @var string
-     */
     public string $priceMonthly;
 
-    /**
-     * @var string
-     */
     public string $priceHourly;
 
     /**
@@ -65,8 +41,5 @@ final class Size extends AbstractEntity
      */
     public array $regions = [];
 
-    /**
-     * @var string
-     */
     public string $description;
 }

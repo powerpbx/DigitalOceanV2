@@ -29,8 +29,6 @@ use DigitalOceanV2\Exception\ExceptionInterface;
 class Database extends AbstractApi
 {
     /**
-     * @param string|null $tag
-     *
      * @throws ExceptionInterface
      *
      * @return DatabaseClusterEntity[]
@@ -45,11 +43,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseClusterEntity
      */
     public function getClusterById(string $id): DatabaseClusterEntity
     {
@@ -59,18 +53,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string      $name
-     * @param string      $engine
-     * @param string      $size
-     * @param string      $region
-     * @param int         $numNodes
-     * @param string|null $version
-     * @param array       $tags
-     * @param string|null $privateNetworkUuid
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseClusterEntity
      */
     public function createCluster(string $name, string $engine, string $size, string $region, int $numNodes, ?string $version = null, array $tags = [], ?string $privateNetworkUuid = null): DatabaseClusterEntity
     {
@@ -89,13 +72,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $size
-     * @param int    $numNodes
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function resize(string $clusterId, string $size, int $numNodes): void
     {
@@ -106,12 +83,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $region
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function migrate(string $clusterId, string $region): void
     {
@@ -121,11 +93,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $clusterId): void
     {
@@ -133,8 +101,6 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
      *
      * @return DatabaseRuleEntity[]
@@ -149,12 +115,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param array  $rules
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function updateFirewallRules(string $clusterId, array $rules): void
     {
@@ -164,13 +125,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $day
-     * @param string $hour
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function updateMaintenanceWindow(string $clusterId, string $day, string $hour): void
     {
@@ -181,8 +136,6 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
      *
      * @return DatabaseBackupEntity[]
@@ -197,19 +150,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string      $name
-     * @param array       $backupRestore
-     * @param string      $engine
-     * @param string      $size
-     * @param string      $region
-     * @param int         $numNodes
-     * @param string|null $version
-     * @param array       $tags
-     * @param string|null $privateNetworkUuid
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseClusterEntity
      */
     public function createClusterFromBackup(string $name, array $backupRestore, string $engine, string $size, string $region, int $numNodes, ?string $version = null, array $tags = [], ?string $privateNetworkUuid = null): DatabaseClusterEntity
     {
@@ -229,8 +170,6 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
      *
      * @return DatabaseReplicaEntity[]
@@ -245,12 +184,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseReplicaEntity
      */
     public function getReplicaByName(string $clusterId, string $name): DatabaseReplicaEntity
     {
@@ -260,16 +194,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string      $clusterId
-     * @param string      $name
-     * @param string      $size
-     * @param string|null $region
-     * @param array       $tags
-     * @param string|null $privateNetworkUuid
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseReplicaEntity
      */
     public function createReplica(string $clusterId, string $name, string $size, ?string $region = null, array $tags = [], ?string $privateNetworkUuid = null): DatabaseReplicaEntity
     {
@@ -285,12 +210,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function removeReplica(string $clusterId, string $name): void
     {
@@ -298,8 +218,6 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
      *
      * @return DatabaseUserEntity[]
@@ -314,12 +232,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseUserEntity
      */
     public function getUserByName(string $clusterId, string $name): DatabaseUserEntity
     {
@@ -329,13 +242,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string      $clusterId
-     * @param string      $name
-     * @param string|null $authPlugin
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseUserEntity
      */
     public function createUser(string $clusterId, string $name, ?string $authPlugin = null): DatabaseUserEntity
     {
@@ -350,13 +257,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $username
-     * @param string $authPlugin
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseUserEntity
      */
     public function updateUserMysqlAuthMethod(string $clusterId, string $username, string $authPlugin): DatabaseUserEntity
     {
@@ -370,12 +271,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function removeUser(string $clusterId, string $name): void
     {
@@ -383,8 +279,6 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
      *
      * @return DatabaseEntity[]
@@ -399,12 +293,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseEntity
      */
     public function getDatabaseByName(string $clusterId, string $name): DatabaseEntity
     {
@@ -414,12 +303,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabaseEntity
      */
     public function createDatabase(string $clusterId, string $name): DatabaseEntity
     {
@@ -431,12 +315,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function removeDatabase(string $clusterId, string $name): void
     {
@@ -444,8 +323,6 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
      *
      * @return DatabasePoolEntity[]
@@ -460,12 +337,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabasePoolEntity
      */
     public function getConnectionPoolByName(string $clusterId, string $name): DatabasePoolEntity
     {
@@ -475,16 +347,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     * @param string $mode
-     * @param int    $size
-     * @param string $db
-     * @param string $user
-     *
      * @throws ExceptionInterface
-     *
-     * @return DatabasePoolEntity
      */
     public function createConnectionPool(string $clusterId, string $name, string $mode, int $size, string $db, string $user): DatabasePoolEntity
     {
@@ -500,12 +363,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $name
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function removeConnectionPool(string $clusterId, string $name): void
     {
@@ -513,11 +371,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
-     *
-     * @return object
      */
     public function getEvictionPolicy(string $clusterId): object
     {
@@ -527,12 +381,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $evictionPolicy
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function updateEvictionPolicy(string $clusterId, string $evictionPolicy): void
     {
@@ -542,11 +391,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     *
      * @throws ExceptionInterface
-     *
-     * @return object
      */
     public function getSqlMode(string $clusterId): object
     {
@@ -556,12 +401,7 @@ class Database extends AbstractApi
     }
 
     /**
-     * @param string $clusterId
-     * @param string $sqlMode
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function updateSqlModes(string $clusterId, string $sqlMode): void
     {

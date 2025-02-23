@@ -20,73 +20,31 @@ namespace DigitalOceanV2\Entity;
  */
 final class AppDeployment extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var array
-     */
     public array $spec;
 
-    /**
-     * @var array
-     */
     public array $services;
 
-    /**
-     * @var array
-     */
     public array $staticSites;
 
-    /**
-     * @var array
-     */
     public array $workers;
 
-    /**
-     * @var array
-     */
     public array $jobs;
 
-    /**
-     * @var string
-     */
     public string $phaseLastUpdatedAt;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @var string
-     */
     public string $updatedAt;
 
-    /**
-     * @var string
-     */
     public string $cause;
 
-    /**
-     * @var string
-     */
     public string $clonedFrom;
 
-    /**
-     * @var array
-     */
     public array $progress;
 
-    /**
-     * @var string
-     */
     public string $phase;
 
-    /**
-     * @var string
-     */
     public string $tierSlug;
 }

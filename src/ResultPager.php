@@ -33,15 +33,11 @@ final class ResultPager implements ResultPagerInterface
 
     /**
      * The client to use for pagination.
-     *
-     * @var Client
      */
     private Client $client;
 
     /**
      * The number of entries to request per page.
-     *
-     * @var int
      */
     private int $perPage;
 
@@ -54,9 +50,6 @@ final class ResultPager implements ResultPagerInterface
 
     /**
      * Create a new result pager instance.
-     *
-     * @param Client   $client
-     * @param int|null $perPage
      *
      * @return void
      */
@@ -74,13 +67,7 @@ final class ResultPager implements ResultPagerInterface
     /**
      * Fetch a single result from an api call.
      *
-     * @param AbstractApi $api
-     * @param string      $method
-     * @param array       $parameters
-     *
      * @throws ExceptionInterface
-     *
-     * @return array
      */
     public function fetch(AbstractApi $api, string $method, array $parameters = []): array
     {
@@ -98,13 +85,7 @@ final class ResultPager implements ResultPagerInterface
     /**
      * Fetch all results from an api call.
      *
-     * @param AbstractApi $api
-     * @param string      $method
-     * @param array       $parameters
-     *
      * @throws ExceptionInterface
-     *
-     * @return array
      */
     public function fetchAll(AbstractApi $api, string $method, array $parameters = []): array
     {
@@ -114,13 +95,7 @@ final class ResultPager implements ResultPagerInterface
     /**
      * Lazily fetch all results from an api call.
      *
-     * @param AbstractApi $api
-     * @param string      $method
-     * @param array       $parameters
-     *
      * @throws ExceptionInterface
-     *
-     * @return \Generator
      */
     public function fetchAllLazy(AbstractApi $api, string $method, array $parameters = []): Generator
     {
@@ -139,8 +114,6 @@ final class ResultPager implements ResultPagerInterface
 
     /**
      * Check to determine the availability of a next page.
-     *
-     * @return bool
      */
     public function hasNext(): bool
     {
@@ -149,8 +122,6 @@ final class ResultPager implements ResultPagerInterface
 
     /**
      * Refresh the pagination property.
-     *
-     * @return void
      */
     private function postFetch(): void
     {
@@ -163,12 +134,6 @@ final class ResultPager implements ResultPagerInterface
         }
     }
 
-    /**
-     * @param AbstractApi $api
-     * @param int         $page
-     *
-     * @return AbstractApi
-     */
     private static function bindPage(AbstractApi $api, int $page): AbstractApi
     {
         /** @var Closure(AbstractApi): AbstractApi */
@@ -183,12 +148,6 @@ final class ResultPager implements ResultPagerInterface
         return $closure($api);
     }
 
-    /**
-     * @param AbstractApi $api
-     * @param int         $perPage
-     *
-     * @return AbstractApi
-     */
     private static function bindPerPage(AbstractApi $api, int $perPage): AbstractApi
     {
         /** @var Closure(AbstractApi): AbstractApi */

@@ -41,11 +41,7 @@ class LoadBalancer extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return LoadBalancerEntity
      */
     public function getById(string $id): LoadBalancerEntity
     {
@@ -55,19 +51,12 @@ class LoadBalancer extends AbstractApi
     }
 
     /**
-     * @param string                      $name
-     * @param string                      $region
      * @param array|ForwardRuleEntity[]   $forwardRules
-     * @param string                      $algorithm
      * @param array|HealthCheckEntity[]   $healthCheck
      * @param array|StickySessionEntity[] $stickySessions
-     * @param array                       $dropletIds
-     * @param bool                        $httpsRedirect
      * @param int<30, 600>                $httpIdleTimeoutSeconds
      *
      * @throws ExceptionInterface
-     *
-     * @return LoadBalancerEntity
      */
     public function create(
         string $name,
@@ -96,12 +85,7 @@ class LoadBalancer extends AbstractApi
     }
 
     /**
-     * @param string                   $id
-     * @param array|LoadBalancerEntity $loadBalancerSpec
-     *
      * @throws ExceptionInterface
-     *
-     * @return LoadBalancerEntity
      */
     public function update(string $id, array|LoadBalancerEntity $loadBalancerSpec): LoadBalancerEntity
     {
@@ -113,22 +97,13 @@ class LoadBalancer extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $id): void
     {
         $this->delete(\sprintf('load_balancers/%s', $id));
     }
 
-    /**
-     * @param array|AbstractEntity $forwardRules
-     *
-     * @return array
-     */
     private static function formatForwardRules(array|AbstractEntity $forwardRules): array
     {
         if (\is_array($forwardRules)) {
@@ -143,11 +118,6 @@ class LoadBalancer extends AbstractApi
         ];
     }
 
-    /**
-     * @param array|AbstractEntity $config
-     *
-     * @return array
-     */
     private static function formatConfigurationOptions(array|AbstractEntity $config): array
     {
         return $config instanceof AbstractEntity ? $config->toArray() : $config;

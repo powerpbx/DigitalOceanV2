@@ -20,53 +20,23 @@ namespace DigitalOceanV2\Entity;
  */
 final class DomainRecord extends AbstractEntity
 {
-    /**
-     * @var int
-     */
     public int $id;
 
-    /**
-     * @var string
-     */
     public string $type;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $data;
 
-    /**
-     * @var int
-     */
     public int $priority;
 
-    /**
-     * @var int
-     */
     public int $port;
 
-    /**
-     * @var int
-     */
     public int $ttl;
 
-    /**
-     * @var int
-     */
     public int $weight;
 
-    /**
-     * @var int
-     */
     public int $flags;
 
-    /**
-     * @var string
-     */
     public string $tag;
 }

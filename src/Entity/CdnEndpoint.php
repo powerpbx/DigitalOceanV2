@@ -19,46 +19,20 @@ namespace DigitalOceanV2\Entity;
  */
 final class CdnEndpoint extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var string
-     */
     public string $origin;
 
-    /**
-     * @var string
-     */
     public string $endpoint;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @var int
-     */
     public int $ttl;
 
-    /**
-     * @var string
-     */
     public string $certificateId;
 
-    /**
-     * @var string
-     */
     public string $customDomain;
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

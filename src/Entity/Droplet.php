@@ -20,69 +20,30 @@ namespace DigitalOceanV2\Entity;
  */
 final class Droplet extends AbstractEntity
 {
-    /**
-     * @var int
-     */
     public int $id;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var int
-     */
     public int $memory;
 
-    /**
-     * @var int
-     */
     public int $vcpus;
 
-    /**
-     * @var int
-     */
     public int $disk;
 
-    /**
-     * @var Region
-     */
     public Region $region;
 
-    /**
-     * @var Image
-     */
     public Image $image;
 
-    /**
-     * @var Kernel
-     */
     public Kernel $kernel;
 
-    /**
-     * @var Size
-     */
     public Size $size;
 
-    /**
-     * @var string
-     */
     public string $sizeSlug;
 
-    /**
-     * @var bool
-     */
     public bool $locked;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @var string
-     */
     public string $status;
 
     /**
@@ -115,41 +76,18 @@ final class Droplet extends AbstractEntity
      */
     public array $features = [];
 
-    /**
-     * @var bool
-     */
     public bool $backupsEnabled;
 
-    /**
-     * @var bool
-     */
     public bool $privateNetworkingEnabled;
 
-    /**
-     * @var bool
-     */
     public bool $ipv6Enabled;
 
-    /**
-     * @var bool
-     */
     public bool $virtIOEnabled;
 
-    /**
-     * @var NextBackupWindow
-     */
     public NextBackupWindow $nextBackupWindow;
 
-    /**
-     * @var string
-     */
     public string $vpcUuid;
 
-    /**
-     * @param array $parameters
-     *
-     * @return void
-     */
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
@@ -224,11 +162,6 @@ final class Droplet extends AbstractEntity
         $this->ipv6Enabled = \in_array('ipv6', $this->features, true);
     }
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

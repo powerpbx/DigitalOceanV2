@@ -60,8 +60,6 @@ class Volume extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
      *
      * @return VolumeEntity the Block Storage volume with the specified id
@@ -75,8 +73,6 @@ class Volume extends AbstractApi
 
     /**
      * Get all volume snapshots.
-     *
-     * @param string $id
      *
      * @throws ExceptionInterface
      *
@@ -101,8 +97,6 @@ class Volume extends AbstractApi
      * @param string $filesystemLabel the label to be applied to the filesystem
      *
      * @throws ExceptionInterface
-     *
-     * @return VolumeEntity
      */
     public function create(string $name, string $description, int $sizeInGigabytes, string $regionSlug, ?string $snapshotId = null, ?string $filesystemType = null, ?string $filesystemLabel = null): VolumeEntity
     {
@@ -129,11 +123,7 @@ class Volume extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $id): void
     {
@@ -145,8 +135,6 @@ class Volume extends AbstractApi
      * @param string $regionSlug restricts the search to volumes available in a specific region
      *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function removeWithNameAndRegion(string $driveName, string $regionSlug): void
     {
@@ -162,8 +150,6 @@ class Volume extends AbstractApi
      * @param string $regionSlug the slug identifier for the region the volume is located in
      *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function attach(string $id, int $dropletId, string $regionSlug): ActionEntity
     {
@@ -182,8 +168,6 @@ class Volume extends AbstractApi
      * @param string $regionSlug the slug identifier for the region the volume is located in
      *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function detach(string $id, int $dropletId, string $regionSlug): ActionEntity
     {
@@ -202,8 +186,6 @@ class Volume extends AbstractApi
      * @param string $regionSlug the slug identifier for the region the volume is located in
      *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function resize(string $id, int $newSize, string $regionSlug): ActionEntity
     {
@@ -223,8 +205,6 @@ class Volume extends AbstractApi
      * @param string $name a human-readable name for the volume snapshot
      *
      * @throws ExceptionInterface
-     *
-     * @return SnapshotEntity
      */
     public function snapshot(string $id, string $name): SnapshotEntity
     {
@@ -234,12 +214,7 @@ class Volume extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param int    $actionId
-     *
      * @throws ExceptionInterface
-     *
-     * @return ActionEntity
      */
     public function getActionById(string $id, int $actionId): ActionEntity
     {
@@ -249,8 +224,6 @@ class Volume extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws ExceptionInterface
      *
      * @return ActionEntity[]

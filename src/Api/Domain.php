@@ -38,11 +38,7 @@ class Domain extends AbstractApi
     }
 
     /**
-     * @param string $domainName
-     *
      * @throws ExceptionInterface
-     *
-     * @return DomainEntity
      */
     public function getByName(string $domainName): DomainEntity
     {
@@ -52,12 +48,7 @@ class Domain extends AbstractApi
     }
 
     /**
-     * @param string      $name
-     * @param string|null $ipAddress
-     *
      * @throws ExceptionInterface
-     *
-     * @return DomainEntity
      */
     public function create(string $name, ?string $ipAddress = null): DomainEntity
     {
@@ -75,11 +66,7 @@ class Domain extends AbstractApi
     }
 
     /**
-     * @param string $domain
-     *
      * @throws ExceptionInterface
-     *
-     * @return void
      */
     public function remove(string $domain): void
     {

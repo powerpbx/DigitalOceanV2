@@ -19,39 +19,18 @@ namespace DigitalOceanV2\Entity;
  */
 final class Snapshot extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $id;
 
-    /**
-     * @var string
-     */
     public string $name;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @var string
-     */
     public string $resourceId;
 
-    /**
-     * @var string
-     */
     public string $resourceType;
 
-    /**
-     * @var int
-     */
     public int $minDiskSize;
 
-    /**
-     * @var float
-     */
     public float $sizeGigabytes;
 
     /**
@@ -59,11 +38,6 @@ final class Snapshot extends AbstractEntity
      */
     public array $regions = [];
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

@@ -20,43 +20,19 @@ namespace DigitalOceanV2\Entity;
  */
 final class AppRegion extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $slug;
 
-    /**
-     * @var string
-     */
     public string $label;
 
-    /**
-     * @var string
-     */
     public string $flag;
 
-    /**
-     * @var string
-     */
     public string $continent;
 
-    /**
-     * @var bool
-     */
     public bool $disabled;
 
-    /**
-     * @var array
-     */
     public array $dataCenters;
 
-    /**
-     * @var string
-     */
     public string $reason;
 
-    /**
-     * @var bool
-     */
     public bool $default;
 }

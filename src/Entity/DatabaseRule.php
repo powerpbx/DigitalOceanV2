@@ -19,36 +19,16 @@ namespace DigitalOceanV2\Entity;
  */
 final class DatabaseRule extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     public string $uuid;
 
-    /**
-     * @var string
-     */
     public string $clusterUuid;
 
-    /**
-     * @var string
-     */
     public string $type;
 
-    /**
-     * @var string
-     */
     public string $value;
 
-    /**
-     * @var string
-     */
     public string $createdAt;
 
-    /**
-     * @param string $createdAt
-     *
-     * @return void
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = static::convertToIso8601($createdAt);

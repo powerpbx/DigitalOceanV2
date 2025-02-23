@@ -20,13 +20,7 @@ namespace DigitalOceanV2\Entity;
  */
 final class MonitoringMetric extends AbstractEntity
 {
-    /**
-     * @var array
-     */
     public array $data;
 
-    /**
-     * @var array
-     */
     public array $status;
 }
