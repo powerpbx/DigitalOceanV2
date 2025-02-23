@@ -33,7 +33,7 @@ class Image extends AbstractApi
     {
         $query = [];
 
-        if (isset($criteria['type']) && \in_array($criteria['type'], ['distribution', 'application'], true)) {
+        if (isset($criteria['type']) && \in_array($criteria['type'], ['application', 'custom', 'distribution', 'snapshot'], true)) {
             $query['type'] = $criteria['type'];
         }
 
