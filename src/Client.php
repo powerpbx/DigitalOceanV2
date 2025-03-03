@@ -74,7 +74,7 @@ class Client
     private readonly Builder $httpClientBuilder;
     private readonly History $responseHistory;
 
-    public function __construct(Builder $httpClientBuilder = null)
+    public function __construct(?Builder $httpClientBuilder = null)
     {
         $this->httpClientBuilder = $builder = $httpClientBuilder ?? new Builder();
         $this->responseHistory = new History();
