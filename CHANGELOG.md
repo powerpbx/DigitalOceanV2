@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## 5.0.1 (03/03/2025)
+
+* Fixed a PHP 8.4 deprecation notice
+
+
 ## 5.0.0 (23/02/2025)
 
 * Add PHP 8.4 support
