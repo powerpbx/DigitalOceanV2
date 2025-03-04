@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## 5.0.2 (04/03/2025)
+
+* Fixed a couple of incorrect property types
+
+
 ## 5.0.1 (03/03/2025)
 
 * Fixed a PHP 8.4 deprecation notice
