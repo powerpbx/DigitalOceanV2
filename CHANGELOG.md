@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## 5.0.3 (UPCOMING)
+## 5.0.3 (11/03/2025)
 
 * Fixed hydration of the Network class with IPv6 addresses
 
