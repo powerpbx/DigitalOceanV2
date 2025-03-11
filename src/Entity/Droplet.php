@@ -103,10 +103,15 @@ final class Droplet extends AbstractEntity
 
                         if (\property_exists($value, 'v6')) {
                             foreach ($value->v6 as $subValue) {
-                                $subValue->version = 6;
-                                $subValue->cidr = $subValue->netmask;
-                                $subValue->netmask = null;
-                                $this->networks[] = new Network($subValue);
+                                /** @var object{ip_address: string, netmask: int, gateway: string, type: string} $subValue */
+                                $this->networks[] = new Network((object) [
+                                    'ip_address' => $subValue->ip_address,
+                                    'netmask' => null,
+                                    'gateway' => $subValue->gateway,
+                                    'type' => $subValue->type,
+                                    'cidr' => \sprintf('%s/%d', $subValue->ip_address, $subValue->netmask),
+                                    'version' => 6,
+                                ]);
                             }
                         }
                     }
