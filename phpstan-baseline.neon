@@ -187,14 +187,80 @@ parameters:
 			path: src/Entity/AbstractEntity.php
 
 		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\Account\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/Account.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\Action\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/Action.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Entity/DatabaseCluster.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\DatabaseCluster\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/DatabaseCluster.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\DatabasePool\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/DatabasePool.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\DatabaseReplica\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/DatabaseReplica.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\DatabaseUser\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/DatabaseUser.php
+
+		-
 			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
 			identifier: foreach.nonIterable
 			count: 2
 			path: src/Entity/Droplet.php
 
 		-
+			message: '#^Cannot access property \$v4 on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Entity/Droplet.php
+
+		-
+			message: '#^Cannot access property \$v6 on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Entity/Droplet.php
+
+		-
 			message: '#^Cannot access property \$version on mixed\.$#'
 			identifier: property.nonObject
+			count: 1
+			path: src/Entity/Droplet.php
+
+		-
+			message: '#^Parameter \#1 \$object_or_class of function property_exists expects object\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/Entity/Droplet.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\Droplet\)\.$#'
+			identifier: property.dynamicName
 			count: 1
 			path: src/Entity/Droplet.php
 
@@ -211,16 +277,64 @@ parameters:
 			path: src/Entity/Firewall.php
 
 		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/Entity/Firewall.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\Firewall\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/Firewall.php
+
+		-
 			message: '#^Loose comparison via "\!\=" is not allowed\.$#'
 			identifier: notEqual.notAllowed
 			count: 1
 			path: src/Entity/FirewallRule.php
 
 		-
-			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
-			identifier: foreach.nonIterable
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\FirewallRuleInbound\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/FirewallRuleInbound.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\FirewallRuleOutbound\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/FirewallRuleOutbound.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\FloatingIp\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/FloatingIp.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, mixed given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Entity/LoadBalancer.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\LoadBalancer\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/LoadBalancer.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\ReservedIp\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/ReservedIp.php
+
+		-
+			message: '#^Variable property access on \$this\(DigitalOceanV2\\Entity\\Volume\)\.$#'
+			identifier: property.dynamicName
+			count: 1
+			path: src/Entity/Volume.php
 
 		-
 			message: '#^Call to function array_filter\(\) requires parameter \#2 to be passed to avoid loose comparison semantics\.$#'
