@@ -25,14 +25,12 @@ final class FirewallRuleOutbound extends FirewallRule
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
-            switch ($property) {
-                case 'destinations':
-                    if (\is_object($value)) {
-                        $this->destinations = new FirewallLocations($value);
-                    }
-                    unset($parameters[$property]);
+            $property = static::convertToCamelCase($property);
 
-                    break;
+            if ('destinations' === $property) {
+                $this->destinations = new FirewallLocations($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
 

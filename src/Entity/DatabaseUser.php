@@ -29,11 +29,13 @@ final class DatabaseUser extends AbstractEntity
 
     public function build(array $parameters): void
     {
-        parent::build($parameters);
-
         foreach ($parameters as $property => $value) {
-            if ('mysql_settings' === $property) {
+            $property = static::convertToCamelCase($property);
+
+            if ('mysqlSettings' === $property) {
                 $this->mysqlSettings = new DatabaseMysqlSettings($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
     }

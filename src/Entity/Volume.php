@@ -47,17 +47,13 @@ final class Volume extends AbstractEntity
 
     public function build(array $parameters): void
     {
-        parent::build($parameters);
-
         foreach ($parameters as $property => $value) {
-            switch ($property) {
-                case 'region':
-                    if (\is_object($value)) {
-                        $this->region = new Region($value);
-                    }
-                    unset($parameters[$property]);
+            $property = static::convertToCamelCase($property);
 
-                    break;
+            if ('region' === $property) {
+                $this->region = new Region($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
     }

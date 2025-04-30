@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## 5.0.4 (UPCOMING)
+
+* Fixed a bunch of entity hydration bugs
+
+
 ## 5.0.3 (11/03/2025)
 
 * Fixed hydration of the Network class with IPv6 addresses

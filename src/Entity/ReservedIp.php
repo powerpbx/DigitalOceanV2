@@ -25,17 +25,23 @@ final class ReservedIp extends AbstractEntity
     public ?Droplet $droplet = null;
 
     public Region $region;
+
     public bool $locked;
+
     public string $projectId;
 
     public function build(array $parameters): void
     {
-        if (isset($parameters['droplet'])) {
-            $this->droplet = new Droplet($parameters['droplet']);
-            unset($parameters['droplet']);
+        foreach ($parameters as $property => $value) {
+            $property = static::convertToCamelCase($property);
+
+            if ('droplet' === $property && null !== $value) {
+                $this->droplet = new Droplet($value);
+            } elseif ('region' === $property) {
+                $this->region = new Region($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
+            }
         }
-        $this->region = new Region($parameters['region']);
-        unset($parameters['region']);
-        parent::build($parameters);
     }
 }

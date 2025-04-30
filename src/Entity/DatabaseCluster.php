@@ -64,28 +64,19 @@ final class DatabaseCluster extends AbstractEntity
 
     public function build(array $parameters): void
     {
-        parent::build($parameters);
-
         foreach ($parameters as $property => $value) {
+            $property = static::convertToCamelCase($property);
+
             if ('connection' === $property) {
                 $this->connection = new DatabaseConnection($value);
-            }
-
-            if ('private_connection' === $property) {
+            } elseif ('privateConnection' === $property) {
                 $this->privateConnection = new DatabaseConnection($value);
-            }
-
-            if ('users' === $property && \is_array($value)) {
-                $this->users = [];
-                foreach ($value as $user) {
-                    if (\is_object($user)) {
-                        $this->users[] = new DatabaseUser($user);
-                    }
-                }
-            }
-
-            if ('maintenance_window' === $property) {
+            } elseif ('users' === $property) {
+                $this->users = array_map(fn ($v) => new DatabaseUser($v), $value);
+            } elseif ('maintenanceWindow' === $property) {
                 $this->maintenanceWindow = new DatabaseMaintenanceWindow($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
     }

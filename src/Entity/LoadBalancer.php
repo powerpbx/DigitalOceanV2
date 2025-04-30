@@ -56,43 +56,20 @@ final class LoadBalancer extends AbstractEntity
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
-            switch ($property) {
-                case 'forwarding_rules':
-                    foreach ($value as $forwardingRule) {
-                        $this->forwardingRules[] = new ForwardingRule($forwardingRule);
-                    }
+            $property = static::convertToCamelCase($property);
 
-                    unset($parameters[$property]);
-
-                    break;
-
-                case 'health_check':
-                    if (\is_object($value)) {
-                        $this->healthCheck = new HealthCheck($value);
-                    }
-                    unset($parameters[$property]);
-
-                    break;
-
-                case 'sticky_sessions':
-                    if (\is_object($value)) {
-                        $this->stickySessions = new StickySession($value);
-                    }
-                    unset($parameters[$property]);
-
-                    break;
-
-                case 'region':
-                    if (\is_object($value)) {
-                        $this->region = new Region($value);
-                    }
-                    unset($parameters[$property]);
-
-                    break;
+            if ('forwardingRules' === $property) {
+                $this->forwardingRules = array_map(fn ($v) => new ForwardingRule($v), $value);
+            } elseif ('healthCheck' === $property) {
+                $this->healthCheck = new HealthCheck($value);
+            } elseif ('stickySessions' === $property) {
+                $this->stickySessions = new StickySession($value);
+            } elseif ('region' === $property) {
+                $this->region = new Region($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
-
-        parent::build($parameters);
     }
 
     public function toArray(): array

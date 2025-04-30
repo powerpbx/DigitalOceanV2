@@ -40,11 +40,13 @@ final class Action extends AbstractEntity
 
     public function build(array $parameters): void
     {
-        parent::build($parameters);
-
         foreach ($parameters as $property => $value) {
+            $property = static::convertToCamelCase($property);
+
             if ('region' === $property) {
                 $this->region = new Region($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
     }

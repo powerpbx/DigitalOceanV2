@@ -41,17 +41,13 @@ final class Account extends AbstractEntity
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
-            switch ($property) {
-                case 'team':
-                    if (\is_object($value)) {
-                        $this->team = new Team($value);
-                    }
-                    unset($parameters[$property]);
+            $property = static::convertToCamelCase($property);
 
-                    break;
+            if ('team' === $property) {
+                $this->team = new Team($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
-
-        parent::build($parameters);
     }
 }

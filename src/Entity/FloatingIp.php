@@ -27,15 +27,15 @@ final class FloatingIp extends AbstractEntity
 
     public function build(array $parameters): void
     {
-        parent::build($parameters);
-
         foreach ($parameters as $property => $value) {
+            $property = static::convertToCamelCase($property);
+
             if ('droplet' === $property) {
                 $this->droplet = new Droplet($value);
-            }
-
-            if ('region' === $property) {
+            } elseif ('region' === $property) {
                 $this->region = new Region($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
     }

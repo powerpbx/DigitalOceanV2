@@ -35,15 +35,15 @@ final class DatabasePool extends AbstractEntity
 
     public function build(array $parameters): void
     {
-        parent::build($parameters);
-
         foreach ($parameters as $property => $value) {
+            $property = static::convertToCamelCase($property);
+
             if ('connection' === $property) {
                 $this->connection = new DatabaseConnection($value);
-            }
-
-            if ('private_connection' === $property) {
+            } elseif ('privateConnection' === $property) {
                 $this->privateConnection = new DatabaseConnection($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
     }

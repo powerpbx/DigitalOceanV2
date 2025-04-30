@@ -25,18 +25,14 @@ final class FirewallRuleInbound extends FirewallRule
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
-            switch ($property) {
-                case 'sources':
-                    if (\is_object($value)) {
-                        $this->sources = new FirewallLocations($value);
-                    }
-                    unset($parameters[$property]);
+            $property = static::convertToCamelCase($property);
 
-                    break;
+            if ('sources' === $property) {
+                $this->sources = new FirewallLocations($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
-
-        parent::build($parameters);
     }
 
     public function toArray(): array

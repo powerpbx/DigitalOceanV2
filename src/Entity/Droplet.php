@@ -91,75 +91,43 @@ final class Droplet extends AbstractEntity
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
-            switch ($property) {
-                case 'networks':
-                    if (\is_object($value)) {
-                        if (\property_exists($value, 'v4')) {
-                            foreach ($value->v4 as $subValue) {
-                                $subValue->version = 4;
-                                $this->networks[] = new Network($subValue);
-                            }
-                        }
+            $property = static::convertToCamelCase($property);
 
-                        if (\property_exists($value, 'v6')) {
-                            foreach ($value->v6 as $subValue) {
-                                /** @var object{ip_address: string, netmask: int, gateway: string, type: string} $subValue */
-                                $this->networks[] = new Network((object) [
-                                    'ip_address' => $subValue->ip_address,
-                                    'netmask' => null,
-                                    'gateway' => $subValue->gateway,
-                                    'type' => $subValue->type,
-                                    'cidr' => \sprintf('%s/%d', $subValue->ip_address, $subValue->netmask),
-                                    'version' => 6,
-                                ]);
-                            }
-                        }
+            if ('networks' === $property) {
+                if (\property_exists($value, 'v4')) {
+                    foreach ($value->v4 as $subValue) {
+                        $subValue->version = 4;
+                        $this->networks[] = new Network($subValue);
                     }
-                    unset($parameters[$property]);
+                }
 
-                    break;
-
-                case 'kernel':
-                    if (\is_object($value)) {
-                        $this->kernel = new Kernel($value);
+                if (\property_exists($value, 'v6')) {
+                    foreach ($value->v6 as $subValue) {
+                        /** @var object{ip_address: string, netmask: int, gateway: string, type: string} $subValue */
+                        $this->networks[] = new Network((object) [
+                            'ip_address' => $subValue->ip_address,
+                            'netmask' => null,
+                            'gateway' => $subValue->gateway,
+                            'type' => $subValue->type,
+                            'cidr' => \sprintf('%s/%d', $subValue->ip_address, $subValue->netmask),
+                            'version' => 6,
+                        ]);
                     }
-                    unset($parameters[$property]);
-
-                    break;
-
-                case 'size':
-                    if (\is_object($value)) {
-                        $this->size = new Size($value);
-                    }
-                    unset($parameters[$property]);
-
-                    break;
-
-                case 'region':
-                    if (\is_object($value)) {
-                        $this->region = new Region($value);
-                    }
-                    unset($parameters[$property]);
-
-                    break;
-
-                case 'image':
-                    if (\is_object($value)) {
-                        $this->image = new Image($value);
-                    }
-                    unset($parameters[$property]);
-
-                    break;
-
-                case 'next_backup_window':
-                    $this->nextBackupWindow = new NextBackupWindow($value);
-                    unset($parameters[$property]);
-
-                    break;
+                }
+            } elseif ('kernel' === $property) {
+                $this->kernel = new Kernel($value);
+            } elseif ('size' === $property) {
+                $this->size = new Size($value);
+            } elseif ('region' === $property) {
+                $this->region = new Region($value);
+            } elseif ('image' === $property) {
+                $this->image = new Image($value);
+            } elseif ('nextBackupWindow' === $property) {
+                $this->nextBackupWindow = new NextBackupWindow($value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
-
-        parent::build($parameters);
 
         $this->backupsEnabled = \in_array('backups', $this->features, true);
         $this->virtIOEnabled = \in_array('virtio', $this->features, true);

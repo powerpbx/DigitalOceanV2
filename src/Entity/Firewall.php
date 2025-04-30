@@ -41,36 +41,16 @@ final class Firewall extends AbstractEntity
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
-            switch ($property) {
-                case 'inbound_rules':
-                    if (\is_array($value)) {
-                        $this->inboundRules = [];
-                        foreach ($value as $key => $rule) {
-                            if (\is_object($rule)) {
-                                $this->inboundRules[$key] = new FirewallRuleInbound($rule);
-                            }
-                        }
-                    }
-                    unset($parameters[$property]);
+            $property = static::convertToCamelCase($property);
 
-                    break;
-
-                case 'outbound_rules':
-                    if (\is_array($value)) {
-                        $this->outboundRules = [];
-                        foreach ($value as $key => $rule) {
-                            if (\is_object($rule)) {
-                                $this->outboundRules[$key] = new FirewallRuleOutbound($rule);
-                            }
-                        }
-                    }
-                    unset($parameters[$property]);
-
-                    break;
+            if ('inbound_rules' === $property) {
+                $this->inboundRules = array_map(fn ($v) => new FirewallRuleInbound($v), $value);
+            } elseif ('outbound_rules' === $property) {
+                $this->outboundRules = array_map(fn ($v) => new FirewallRuleOutbound($v), $value);
+            } elseif (\property_exists($this, $property)) {
+                $this->$property = $value;
             }
         }
-
-        parent::build($parameters);
     }
 
     public function setCreatedAt(string $createdAt): void
