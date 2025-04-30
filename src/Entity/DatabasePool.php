@@ -38,11 +38,11 @@ final class DatabasePool extends AbstractEntity
         parent::build($parameters);
 
         foreach ($parameters as $property => $value) {
-            if ('connection' === $property && \is_object($value)) {
+            if ('connection' === $property) {
                 $this->connection = new DatabaseConnection($value);
             }
 
-            if ('private_connection' === $property && \is_object($value)) {
+            if ('private_connection' === $property) {
                 $this->privateConnection = new DatabaseConnection($value);
             }
         }

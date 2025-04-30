@@ -67,11 +67,11 @@ final class DatabaseCluster extends AbstractEntity
         parent::build($parameters);
 
         foreach ($parameters as $property => $value) {
-            if ('connection' === $property && \is_object($value)) {
+            if ('connection' === $property) {
                 $this->connection = new DatabaseConnection($value);
             }
 
-            if ('private_connection' === $property && \is_object($value)) {
+            if ('private_connection' === $property) {
                 $this->privateConnection = new DatabaseConnection($value);
             }
 
@@ -84,7 +84,7 @@ final class DatabaseCluster extends AbstractEntity
                 }
             }
 
-            if ('maintenance_window' === $property && \is_object($value)) {
+            if ('maintenance_window' === $property) {
                 $this->maintenanceWindow = new DatabaseMaintenanceWindow($value);
             }
         }

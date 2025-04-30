@@ -30,7 +30,7 @@ final class Action extends AbstractEntity
 
     public ?string $completedAt;
 
-    public string $resourceId;
+    public int $resourceId;
 
     public string $resourceType;
 
@@ -43,7 +43,7 @@ final class Action extends AbstractEntity
         parent::build($parameters);
 
         foreach ($parameters as $property => $value) {
-            if ('region' === $property && \is_object($value)) {
+            if ('region' === $property) {
                 $this->region = new Region($value);
             }
         }

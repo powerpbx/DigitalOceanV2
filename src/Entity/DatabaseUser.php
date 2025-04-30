@@ -32,7 +32,7 @@ final class DatabaseUser extends AbstractEntity
         parent::build($parameters);
 
         foreach ($parameters as $property => $value) {
-            if ('mysql_settings' === $property && \is_object($value)) {
+            if ('mysql_settings' === $property) {
                 $this->mysqlSettings = new DatabaseMysqlSettings($value);
             }
         }

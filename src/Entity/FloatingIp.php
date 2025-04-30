@@ -30,11 +30,11 @@ final class FloatingIp extends AbstractEntity
         parent::build($parameters);
 
         foreach ($parameters as $property => $value) {
-            if ('droplet' === $property && \is_object($value)) {
+            if ('droplet' === $property) {
                 $this->droplet = new Droplet($value);
             }
 
-            if ('region' === $property && \is_object($value)) {
+            if ('region' === $property) {
                 $this->region = new Region($value);
             }
         }
