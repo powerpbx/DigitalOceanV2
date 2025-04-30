@@ -59,7 +59,7 @@ final class LoadBalancer extends AbstractEntity
             $property = static::convertToCamelCase($property);
 
             if ('forwardingRules' === $property) {
-                $this->forwardingRules = array_map(fn ($v) => new ForwardingRule($v), $value);
+                $this->forwardingRules = \array_map(fn ($v) => new ForwardingRule($v), $value);
             } elseif ('healthCheck' === $property) {
                 $this->healthCheck = new HealthCheck($value);
             } elseif ('stickySessions' === $property) {

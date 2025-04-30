@@ -44,9 +44,9 @@ final class Firewall extends AbstractEntity
             $property = static::convertToCamelCase($property);
 
             if ('inbound_rules' === $property) {
-                $this->inboundRules = array_map(fn ($v) => new FirewallRuleInbound($v), $value);
+                $this->inboundRules = \array_map(fn ($v) => new FirewallRuleInbound($v), $value);
             } elseif ('outbound_rules' === $property) {
-                $this->outboundRules = array_map(fn ($v) => new FirewallRuleOutbound($v), $value);
+                $this->outboundRules = \array_map(fn ($v) => new FirewallRuleOutbound($v), $value);
             } elseif (\property_exists($this, $property)) {
                 $this->$property = $value;
             }
